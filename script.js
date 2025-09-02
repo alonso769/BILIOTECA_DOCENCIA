@@ -24,17 +24,42 @@ function verDetalles(btn) {
     const fecha = card.dataset.fecha;
     const especialidad = card.dataset.especialidad;
     const detalles = card.dataset.detalles || "Sin información adicional.";
+    const investigador = card.dataset.investigador || "No registrado";
+    const celular = card.dataset.celular || "No registrado";
+    const correo = card.dataset.correo || "No registrado";
+    const entidad = card.dataset.entidad || "No registrada";
+    const eess = card.dataset.eess || "No registrado";
+    const solicitud = card.dataset.solicitud || "No registrada";
+    const estado = card.dataset.estado || "No registrado";
+    const inicio = card.dataset.inicio || "No registrado";
+    const termino = card.dataset.termino || "No registrado";
+    const informe = card.dataset.informe || "No registrado";
+    const sesion = card.dataset.sesion || "No registrada";
 
     const modal = document.getElementById("detallesModal");
     const contenido = document.getElementById("detallesContenido");
+
     contenido.innerHTML = `
         <h2>${nombre}</h2>
         <p><strong>Fecha:</strong> ${fecha}</p>
         <p><strong>Especialidad:</strong> ${especialidad}</p>
         <p><strong>Detalles:</strong> ${detalles}</p>
+        <hr>
+        <p><strong>Investigador Principal:</strong> ${investigador}</p>
+        <p><strong>Celular:</strong> ${celular}</p>
+        <p><strong>Correo Electrónico:</strong> ${correo}</p>
+        <p><strong>Entidad:</strong> ${entidad}</p>
+        <p><strong>EESS de Ejecución:</strong> ${eess}</p>
+        <p><strong>Solicitud:</strong> ${solicitud}</p>
+        <p><strong>Estado de Constancia:</strong> ${estado}</p>
+        <p><strong>Fecha de Inicio:</strong> ${inicio}</p>
+        <p><strong>Fecha de Término:</strong> ${termino}</p>
+        <p><strong>Informe Final:</strong> ${informe}</p>
+        <p><strong>Fecha de Sesión Aprobación:</strong> ${sesion}</p>
     `;
     modal.style.display = "flex";
 }
+
 
 function ocultarDetalles() {
     const modal = document.getElementById("detallesModal");
