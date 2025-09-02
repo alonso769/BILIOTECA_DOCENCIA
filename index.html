@@ -73,20 +73,31 @@
                         <button onclick="verDetalles(this)">Ver Detalles</button>
                     </div>
                 </div>
-                <div class="pdf-card" 
-                     data-nombre="cv diris certificado" 
-                     data-fecha="2025-08-15" 
-                     data-especialidad="medicina"
-                     data-detalles="Certificado oficial DIRIS para fines profesionales.">
-                    <img src="imagenes/pdf-icono.png" alt="CV DIRIS Certificado" class="pdf-img">
-                    <h3>CV DIRIS Certificado</h3>
-                    <p>Fecha: 2025-08-15</p>
-                    <div class="card-buttons">
-                        <button onclick="verPDF('PDF/CV-DIRIS_certificado.pdf')">Ver PDF</button>
-                        <button onclick="descargarPDF('PDF/CV-DIRIS_certificado.pdf')">Descargar</button>
-                        <button onclick="verDetalles(this)">Ver Detalles</button>
-                    </div>
-                </div>
+              <div class="pdf-card" 
+     data-nombre="cv diris certificado" 
+     data-fecha="2025-08-15" 
+     data-especialidad="medicina"
+     data-detalles="Certificado oficial DIRIS para fines profesionales."
+     data-investigador="Dr. Juan Pérez"
+     data-celular="987654321"
+     data-correo="juan.perez@diris.gob.pe"
+     data-entidad="DIRIS Lima Norte"
+     data-eess="Hospital San Bartolomé"
+     data-solicitud="Solicitud N° 1234"
+     data-estado="Aprobado"
+     data-inicio="2025-08-01"
+     data-termino="2025-11-30"
+     data-informe="Pendiente"
+     data-sesion="2025-07-28">
+    <img src="imagenes/pdf-icono.png" alt="CV DIRIS Certificado" class="pdf-img">
+    <h3>CV DIRIS Certificado</h3>
+    <p>Fecha: 2025-08-15</p>
+    <div class="card-buttons">
+        <button onclick="verPDF('PDF/CV-DIRIS_certificado.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/CV-DIRIS_certificado.pdf')">Descargar</button>
+        <button onclick="verDetalles(this)">Ver Detalles</button>
+    </div>
+</div>
             </div>
         </div>
 
@@ -120,13 +131,17 @@
         </div>
     </div>
 
-    <!-- MODAL PARA VER DETALLES -->
-    <div id="detallesModal" class="modal">
-        <div class="modal-content">
-            <button onclick="ocultarDetalles()" class="modal-close-btn">&times;</button>
-            <div id="detallesContenido"></div>
-        </div>
-    </div>
+   <!-- MODAL PARA VER DETALLES -->
+<div id="detallesModal" class="modal">
+  <div class="modal-content">
+    <!-- Botón de cerrar (se verá como borrador con el CSS que te pasé) -->
+    <button onclick="ocultarDetalles()" class="close">&times;</button>  
+    
+    <!-- Aquí aplicamos la clase detalle-cuaderno -->
+    <div id="detallesContenido" class="detalle-cuaderno"></div>
+  </div>
+</div>
+
 
     <!-- FOOTER -->
     <footer id="contacto" class="footer">
