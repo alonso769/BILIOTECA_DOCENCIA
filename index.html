@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de PDFs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">BIBLIOTECA</div>
+        <ul class="nav-menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">PDFs</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </header>
+
+    <!-- CARRUSEL DE IMÁGENES -->
+    <div class="image-carousel-container">
+        <div class="image-carousel" id="imageCarousel">
+            <div class="image-slide active-slide">
+                <img src="imagenes/imagen1.png" alt="Docencia e Investigación Médica 1">
+                <div class="image-text">DOCENCIA MÉDICA</div>
+            </div>
+            <div class="image-slide">
+                <img src="imagenes/imagen2.png" alt="Docencia e Investigación Médica 2">
+                <div class="image-text">INVESTIGACIÓN</div>
+            </div>
+            <div class="image-slide">
+                <img src="imagenes/imagen3.png" alt="Docencia e Investigación Médica 3">
+                <div class="image-text">CONOCIMIENTO</div>
+            </div>
+        </div>
+        <div class="image-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-container">
+        <h1 class="section-title">Biblioteca de PDFs</h1>
+
+        <!-- Filtros -->
+        <div class="filter-box">
+            <input type="text" id="searchName" placeholder="Buscar por nombre...">
+            <input type="date" id="searchDate">
+            <select id="searchEspecialidad">
+                <option value="">Todas las especialidades</option>
+                <option value="medicina">Medicina</option>
+                <option value="nutricion">Nutrición</option>
+            </select>
+        </div>
+
+        <!-- Grupo Medicina -->
+        <div id="grupo-medicina" class="pdf-group">
+            <h2 class="group-title">Medicina</h2>
+            <div class="pdf-grid">
+                <div class="pdf-card" 
+                     data-nombre="documento medicina 1" 
+                     data-fecha="2025-08-15" 
+                     data-especialidad="medicina"
+                     data-detalles="Documento completo de medicina sobre diagnóstico avanzado.">
+                    <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 1" class="pdf-img">
+                    <h3>Documento de Medicina 1</h3>
+                    <p>Fecha: 2025-08-15</p>
+                    <div class="card-buttons">
+                        <button onclick="verPDF('PDF/documento_medicina_1.pdf')">Ver PDF</button>
+                        <button onclick="descargarPDF('PDF/documento_medicina_1.pdf')">Descargar</button>
+                        <button onclick="verDetalles(this)">Ver Detalles</button>
+                    </div>
+                </div>
+                <div class="pdf-card" 
+                     data-nombre="cv diris certificado" 
+                     data-fecha="2025-08-15" 
+                     data-especialidad="medicina"
+                     data-detalles="Certificado oficial DIRIS para fines profesionales.">
+                    <img src="imagenes/pdf-icono.png" alt="CV DIRIS Certificado" class="pdf-img">
+                    <h3>CV DIRIS Certificado</h3>
+                    <p>Fecha: 2025-08-15</p>
+                    <div class="card-buttons">
+                        <button onclick="verPDF('PDF/CV-DIRIS_certificado.pdf')">Ver PDF</button>
+                        <button onclick="descargarPDF('PDF/CV-DIRIS_certificado.pdf')">Descargar</button>
+                        <button onclick="verDetalles(this)">Ver Detalles</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grupo Nutrición -->
+        <div id="grupo-nutricion" class="pdf-group">
+            <h2 class="group-title">Nutrición</h2>
+            <div class="pdf-grid">
+                <div class="pdf-card" 
+                     data-nombre="guia de nutricion 1" 
+                     data-fecha="2025-09-01" 
+                     data-especialidad="nutricion"
+                     data-detalles="Guía alimenticia con recomendaciones actualizadas.">
+                    <img src="imagenes/pdf-icono.png" alt="Guía Nutrición 1" class="pdf-img">
+                    <h3>Guía de Nutrición 1</h3>
+                    <p>Fecha: 2025-09-01</p>
+                    <div class="card-buttons">
+                        <button onclick="verPDF('PDF/guia_nutricion_1.pdf')">Ver PDF</button>
+                        <button onclick="descargarPDF('PDF/guia_nutricion_1.pdf')">Descargar</button>
+                        <button onclick="verDetalles(this)">Ver Detalles</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- MODAL DEL VISOR DE PDF -->
+    <div id="visor" class="modal">
+        <div class="modal-content">
+            <button onclick="ocultarPDF()" class="modal-close-btn">&times;</button>
+            <iframe id="pdfViewer" src=""></iframe>
+        </div>
+    </div>
+
+    <!-- MODAL PARA VER DETALLES -->
+    <div id="detallesModal" class="modal">
+        <div class="modal-content">
+            <button onclick="ocultarDetalles()" class="modal-close-btn">&times;</button>
+            <div id="detallesContenido"></div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contacto" class="footer">
+        <p>© 2025 Elaborado por Alonso Sixto Silva Vidal . Todos los derechos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
