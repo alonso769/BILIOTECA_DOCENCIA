@@ -20,10 +20,8 @@ function ocultarPDF() {
 // --- NUEVO: Ver detalles ---
 function verDetalles(btn) {
     const card = btn.closest('.pdf-card');
-    const nombre = card.dataset.nombre;
-    const fecha = card.dataset.fecha;
-    const especialidad = card.dataset.especialidad;
-    const detalles = card.dataset.detalles || "Sin información adicional.";
+    const hoja = card.dataset.hoja || "No registrada";
+    const titulo = card.dataset.titulo || "No registrado";
     const investigador = card.dataset.investigador || "No registrado";
     const celular = card.dataset.celular || "No registrado";
     const correo = card.dataset.correo || "No registrado";
@@ -40,12 +38,10 @@ function verDetalles(btn) {
     const contenido = document.getElementById("detallesContenido");
 
     contenido.innerHTML = `
-        <h2>${nombre}</h2>
-        <p><strong>Fecha:</strong> ${fecha}</p>
-        <p><strong>Especialidad:</strong> ${especialidad}</p>
-        <p><strong>Detalles:</strong> ${detalles}</p>
-        <hr>
+        <h2>HOJA DE TRÁMITE: ${hoja}</h2>
+        <p><strong>Título del Proyecto:</strong> ${titulo}</p>
         <p><strong>Investigador Principal:</strong> ${investigador}</p>
+        <hr>
         <p><strong>Celular:</strong> ${celular}</p>
         <p><strong>Correo Electrónico:</strong> ${correo}</p>
         <p><strong>Entidad:</strong> ${entidad}</p>
@@ -59,6 +55,7 @@ function verDetalles(btn) {
     `;
     modal.style.display = "flex";
 }
+
 
 
 function ocultarDetalles() {
