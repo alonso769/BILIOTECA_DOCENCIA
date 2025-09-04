@@ -203,17 +203,56 @@ body {
     margin-bottom: 15px;
 }
 
+/* Ajuste específico para el título de la universidad */
 .pdf-card h3 {
-    font-size: 1.1rem;
+    font-size: 0.85rem;
     color: #0b3558;
     margin-bottom: 8px;
-    min-height: 50px;
+    min-height: 50px; /* Altura mínima para acomodar dos líneas de texto */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limita el texto a 2 líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    line-height: 1.2; /* Ajusta el interlineado para que el texto sea más compacto */
 }
 
+
+/* Ajuste específico para el nombre del investigador */
 .pdf-card p {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     color: #444;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+    overflow: visible;
+    white-space: normal;
+    text-overflow: clip;
+}
+
+.pdf-card p strong {
+    font-weight: bold;
+    color: #0b3558;
+}
+
+/* Ajuste para la sección de hoja de trámite */
+.pdf-meta {
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    overflow: visible;
+    white-space: normal;
+    text-overflow: clip;
+}
+
+/* Ajuste para el contenedor de información */
+.pdf-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    overflow: visible;
 }
 
 .pdf-card .card-buttons {
