@@ -10,9 +10,10 @@
     <!-- HEADER -->
     <header class="header">
         <div class="logo">BIBLIOTECA</div>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
         <ul class="nav-menu">
             <li><a href="#">Inicio</a></li>
-            <li><a href="#">PDFs</a></li>
+              <li><a href="informativo.html">Informativo</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </header>
@@ -45,15 +46,47 @@
         <h1 class="section-title">Biblioteca de PDFs</h1>
 
         <!-- Filtros -->
-        <div class="filter-box">
-            <input type="text" id="searchName" placeholder="Buscar por nombre...">
-            <input type="date" id="searchDate">
-            <select id="searchEspecialidad">
-                <option value="">Todas las especialidades</option>
-                <option value="medicina">Medicina</option>
-                <option value="nutricion">Nutrición</option>
-            </select>
-        </div>
+       <!-- Filtros -->
+<div class="filter-box">
+    <input type="text" id="searchName" placeholder="Buscar por nombre del investigador...">
+    <input type="text" id="searchTitulo" placeholder="Buscar por título del proyecto...">
+    <select id="searchEstado">
+        <option value="">Todos los estados</option>
+        <option value="NO SE PRESENTÓ">NO SE PRESENTÓ</option>
+        <option value="CANCELA PRESENTACIÓN">CANCELA PRESENTACION</option>
+        <option value="DESISTIERON CANCELAN PRESENTACION">DESISTIERON CANCELAN PRESENTACION</option>
+        <option value="NO LEVANTA OBSERVACIONES">NO LEVANTA OBSERVACIONES</option>
+        <option value="DESAPROBADO">DESAPROBADO</option>
+        <option value="APROBADO">APROBADO</option>
+    </select>
+    <select id="searchEspecialidad">
+        <option value="">Todas las especialidades</option>
+        <option value="medicina">Medicina</option>
+        <option value="nutricion">Nutrición</option>
+    </select>
+    <select id="searchEntidad">
+        <option value="">Todas las universidades</option>
+        <option value="UNIVERSIDAD PERUANA CAYETANO HEREDIA">UNIVERSIDAD PERUANA CAYETANO HEREDIA</option>
+        <option value="UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS">UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</option>
+        <option value="UNIVERSIDAD NACIONAL DANIEL ALCIDES CARRION">UNIVERSIDAD NACIONAL DANIEL ALCIDES CARRION</option>
+        <option value="UNIVERSIDAD NORBERT WIENER">UNIVERSIDAD NORBERT WIENER</option>
+        <option value="UNIVERSIDAD PRIVADA DEL NORTE">UNIVERSIDAD PRIVADA DEL NORTE</option>
+        <option value="UNIVERSIDAD CESAR VALLEJO">UNIVERSIDAD CESAR VALLEJO</option>
+        <option value="UNIVERSIDAD TECNOLOGICA DEL PERU">UNIVERSIDAD TECNOLOGICA DEL PERU</option>
+        <option value="UNIVERSIDAD RICARDO PALMA">UNIVERSIDAD RICARDO PALMA</option>
+        <option value="UNIVERSIDAD PRIVADA SAN JUAN BAUTISTA">UNIVERSIDAD PRIVADA SAN JUAN BAUTISTA</option>
+        <option value="SOCIOS EN SALUD SUCURSAL PERU">SOCIOS EN SALUD SUCURSAL PERU</option>
+        <option value="INSTITUTO DE INVESTIGACION NUTRICIONAL">INSTITUTO DE INVESTIGACION NUTRICIONAL</option>
+        <option value="UNIVERSIDAD NACIONAL FEDERICO VILLARREAL">UNIVERSIDAD NACIONAL FEDERICO VILLARREAL</option>
+        <option value="PONTIFICIA UNIVERSIDAD CATOLICA DEL PERU">PONTIFICIA UNIVERSIDAD CATOLICA DEL PERU</option>
+        <option value="UNIVERSIDAD DE SAN MARTIN DE PORRES">UNIVERSIDAD DE SAN MARTIN DE PORRES</option>
+        <option value="UNIVERSIDAD SEÑOR DE SIPAN">UNIVERSIDAD SEÑOR DE SIPAN</option>
+        <option value="CONCYTEC">CONCYTEC</option>
+    </select>
+    <button id="btnFiltrar" class="btn-filtrar">Filtrar</button>
+</div>
+
+
 
         <!-- Grupo Medicina -->
         <div id="grupo-medicina" class="pdf-group">
@@ -472,7 +505,7 @@
      data-informe="Pendiente"
      data-sesion="Pendiente">
     <div class="pdf-img-container">
-        <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina" class="pdf-img">
+        <img src="imagenes/pdf-icono27.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
     <div class="pdf-info">
         <h3>UNIVERSIDAD PRIVADA SAN JUAN BAUTISTA</h3>
@@ -480,8 +513,8 @@
         <p><strong>INVESTIGADOR:</strong> ROJAS MENDOZA YHOJANA STEPHANIE</p>
     </div>
     <div class="card-buttons">
-        <button onclick="verPDF('PDF/documento_medicina_20.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_20.pdf')">Descargar</button>
+        <button onclick="verPDF('PDF/archivo27.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/archivo27.pdf')">Descargar</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -501,7 +534,7 @@
      data-informe="Pendiente"
      data-sesion="Pendiente">
     <div class="pdf-img-container">
-        <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina" class="pdf-img">
+        <img src="imagenes/pdf-icono29.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
     <div class="pdf-info">
         <h3>UNIVERSIDAD PERUANA CAYETANO HEREDIA</h3>
@@ -509,8 +542,8 @@
         <p><strong>INVESTIGADOR:</strong> PAJUELO TRAVEZANO MONICA JEHNNY, MENDOZA LOZADA ANA SOFIA</p>
     </div>
     <div class="card-buttons">
-        <button onclick="verPDF('PDF/documento_medicina_21.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_21.pdf')">Descargar</button>
+        <button onclick="verPDF('PDF/archivo29.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/archivo29.pdf')">Descargar</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -530,7 +563,7 @@
      data-informe="Pendiente"
      data-sesion="Pendiente">
     <div class="pdf-img-container">
-        <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina" class="pdf-img">
+        <img src="imagenes/pdf-icono30.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
     <div class="pdf-info">
         <h3>UNIVERSIDAD NORBERT WIENER</h3>
@@ -538,8 +571,8 @@
         <p><strong>INVESTIGADOR:</strong> RAMOS CARPIO LIZ MILAGROS</p>
     </div>
     <div class="card-buttons">
-        <button onclick="verPDF('PDF/documento_medicina_22.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_22.pdf')">Descargar</button>
+        <button onclick="verPDF('PDF/archivo30.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/archivo30.pdf')">Descargar</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -559,7 +592,7 @@
      data-informe="Pendiente"
      data-sesion="Pendiente">
     <div class="pdf-img-container">
-        <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina" class="pdf-img">
+        <img src="imagenes/pdf-icono32.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
     <div class="pdf-info">
         <h3>UNIVERSIDAD PERUANA CAYETANO HEREDIA</h3>
@@ -567,8 +600,8 @@
         <p><strong>INVESTIGADOR:</strong> BEZARES TRUJILLANO ROSSANA EDITH, MENDOZA LOZADA ANA SOFIA</p>
     </div>
     <div class="card-buttons">
-        <button onclick="verPDF('PDF/documento_medicina_23.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_23.pdf')">Descargar</button>
+        <button onclick="verPDF('PDF/archivo32.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/archivo32.pdf')">Descargar</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -792,7 +825,7 @@
      data-informe="Pendiente"
      data-sesion="Pendiente">
     <div class="pdf-img-container">
-        <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina" class="pdf-img">
+        <img src="imagenes/pdf-icono21.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
     <div class="pdf-info">
         <h3>UNIVERSIDAD PERUANA CAYETANO HEREDIA</h3>
@@ -800,8 +833,8 @@
         <p><strong>INVESTIGADOR:</strong> LAMA AGURTO JAVIER</p>
     </div>
     <div class="card-buttons">
-        <button onclick="verPDF('PDF/documento_medicina_13.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_13.pdf')">Descargar</button>
+        <button onclick="verPDF('PDF/archivo21.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/archivo21.pdf')">Descargar</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -821,13 +854,13 @@
              data-termino="31/12/2025"
              data-informe="Pendiente"
              data-sesion="Pendiente">
-            <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 1" class="pdf-img">
+            <img src="imagenes/pdf-icono25.jpg" alt="Documento Medicina 1" class="pdf-img">
             <h3>SOCIOS EN SALUD SUCURSAL PERU</h3>
             <p><strong>HOJA DE TRÁMITE:</strong>202519210</p>
             <p><strong>INVESTIGADOR:</strong>MAC RAE THAYS JHON RICHARD JAMES</p>
             <div class="card-buttons">
-                <button onclick="verPDF('PDF/documento_medicina_1.pdf')">Ver PDF</button>
-                <button onclick="descargarPDF('PDF/documento_medicina_1.pdf')">Descargar</button>
+                <button onclick="verPDF('PDF/archivo25.pdf')">Ver PDF</button>
+                <button onclick="descargarPDF('PDF/archivo25.pdf')">Descargar</button>
                 <button onclick="verDetalles(this)">Ver Detalles</button>
             </div>
         </div>
@@ -869,13 +902,13 @@
              data-termino="31/12/2025"
              data-informe="Pendiente"
              data-sesion="7/02/2025">
-            <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 1" class="pdf-img">
+            <img src="imagenes/pdf-icono33.jpg" alt="Documento Medicina 1" class="pdf-img">
             <h3>UNIVERSIDAD DE SAN MARTIN DE PORRES</h3>
             <p><strong>HOJA DE TRÁMITE:</strong>202535223</p>
             <p><strong>INVESTIGADOR:</strong>QUIÑONEZ FLORES XIOMARA YAMILE</p>
             <div class="card-buttons">
-                <button onclick="verPDF('PDF/documento_medicina_1.pdf')">Ver PDF</button>
-                <button onclick="descargarPDF('PDF/documento_medicina_1.pdf')">Descargar</button>
+                <button onclick="verPDF('PDF/archivo33.pdf')">Ver PDF</button>
+                <button onclick="descargarPDF('PDF/archivo33.pdf')">Descargar</button>
                 <button onclick="verDetalles(this)">Ver Detalles</button>
             </div>
         </div>
@@ -894,13 +927,13 @@
              data-termino="31/12/2025"
              data-informe="Pendiente"
              data-sesion="Pendiente">
-            <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 1" class="pdf-img">
+            <img src="imagenes/pdf-icono24.jpg" alt="Documento Medicina 1" class="pdf-img">
             <h3>UNIVERSIDAD NORBERT WIENER</h3>
             <p><strong>HOJA DE TRÁMITE:</strong>202517035</p>
             <p><strong>INVESTIGADOR:</strong>BAUTISTA HERNANDEZ MAYRA ALEXANDRA</p>
             <div class="card-buttons">
-                <button onclick="verPDF('PDF/documento_medicina_1.pdf')">Ver PDF</button>
-                <button onclick="descargarPDF('PDF/documento_medicina_1.pdf')">Descargar</button>
+                <button onclick="verPDF('PDF/archivo24.pdf')">Ver PDF</button>
+                <button onclick="descargarPDF('PDF/archivo24.pdf')">Descargar</button>
                 <button onclick="verDetalles(this)">Ver Detalles</button>
             </div>
         </div>
@@ -967,13 +1000,13 @@
              data-termino="31/01/2026"
              data-informe="Pendiente"
              data-sesion="Pendiente">
-            <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 1" class="pdf-img">
+            <img src="imagenes/pdf-icono35.jpg" alt="Documento Medicina 1" class="pdf-img">
             <h3>UNIVERSIDAD RICARDO PALMA</h3>
             <p><strong>HOJA DE TRÁMITE:</strong>202535235</p>
             <p><strong>INVESTIGADOR:</strong>ALARCÓN RUESTA NICOLE STEFANI</p>
             <div class="card-buttons">
-                <button onclick="verPDF('PDF/documento_medicina_1.pdf')">Ver PDF</button>
-                <button onclick="descargarPDF('PDF/documento_medicina_1.pdf')">Descargar</button>
+                <button onclick="verPDF('PDF/archivo35.pdf')">Ver PDF</button>
+                <button onclick="descargarPDF('PDF/archivo35.pdf')">Descargar</button>
                 <button onclick="verDetalles(this)">Ver Detalles</button>
             </div>
         </div>
@@ -991,13 +1024,13 @@
              data-termino="31/08/2025"
              data-informe="Pendiente"
              data-sesion="Pendiente">
-            <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 1" class="pdf-img">
+            <img src="imagenes/pdf-icono36.jpg" alt="Documento Medicina 1" class="pdf-img">
             <h3>UNIVERSIDAD RICARDO PALMA</h3>
             <p><strong>HOJA DE TRÁMITE:</strong>202536181</p>
             <p><strong>INVESTIGADOR:</strong>VILLEGAS HUERTAS LEONARDO</p>
             <div class="card-buttons">
-                <button onclick="verPDF('PDF/documento_medicina_1.pdf')">Ver PDF</button>
-                <button onclick="descargarPDF('PDF/documento_medicina_1.pdf')">Descargar</button>
+                <button onclick="verPDF('PDF/archivo36.pdf')">Ver PDF</button>
+                <button onclick="descargarPDF('PDF/archivo36.pdf')">Descargar</button>
                 <button onclick="verDetalles(this)">Ver Detalles</button>
             </div>
         </div>
@@ -1138,13 +1171,13 @@
      data-termino="31/12/2025"
      data-informe="Pendiente"
      data-sesion="Pendiente">
-    <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 4" class="pdf-img">
+    <img src="imagenes/pdf-icono23.jpg" alt="Documento Medicina 4" class="pdf-img">
     <h3>PONTIFICIA UNIVERSIDAD CATÓLICA DEL PERÚ</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202516719</p>
     <p><strong>INVESTIGADOR:</strong> GIANELLA MALCA CAMILA</p>
     <div class="card-buttons">
-        <button onclick="verPDF('PDF/documento_medicina_4.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_4.pdf')">Descargar</button>
+        <button onclick="verPDF('PDF/archivo23.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/archivo23.pdf')">Descargar</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1169,8 +1202,8 @@
     <p><strong>HOJA DE TRÁMITE:</strong> 202505490</p>
     <p><strong>INVESTIGADOR:</strong> MENDOZA TICONA CARLOS ALBERTO</p>
     <div class="card-buttons">
-        <button onclick="verPDF('PDF/archivo20.pptx')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo20.pptx')">Descargar</button>
+        <button onclick="verPDF('PDF/archivo20.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/archivo20.pdf')">Descargar</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1214,13 +1247,13 @@
      data-termino="31/12/2025"
      data-informe="Pendiente"
      data-sesion="Pendiente">
-    <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina" class="pdf-img">
+    <img src="imagenes/pdf-icono31.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD CÉSAR VALLEJO</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202532057</p>
     <p><strong>INVESTIGADOR:</strong> GARCÍA CARRANZA JUAN ALFONSO, SECCA DA VILA MELANY NAZIRA</p>
     <div class="card-buttons">
-        <button onclick="verPDF('PDF/documento_medicina_8.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_8.pdf')">Descargar</button>
+        <button onclick="verPDF('PDF/archivo31.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/archivo31.pdf')">Descargar</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1294,13 +1327,13 @@
      data-termino="31/12/2025"
      data-informe="Pendiente"
      data-sesion="Pendiente">
-    <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina" class="pdf-img">
+    <img src="imagenes/pdf-icono22.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL FEDERICO VILLARREAL</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202512912</p>
     <p><strong>INVESTIGADOR:</strong> PALACIOS OBREGÓN ROSARIO PATRICIA</p>
     <div class="card-buttons">
-        <button onclick="verPDF('PDF/documento_medicina_14.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_14.pdf')">Descargar</button>
+        <button onclick="verPDF('PDF/archivo22.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/archivo22.pdf')">Descargar</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1319,13 +1352,13 @@
      data-termino="31/12/2025"
      data-informe="Pendiente"
      data-sesion="Pendiente">
-    <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina" class="pdf-img">
+    <img src="imagenes/pdf-icono26.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL FEDERICO VILLARREAL</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202521068</p>
     <p><strong>INVESTIGADOR:</strong> BARRIOS MONTALVO SHANY</p>
     <div class="card-buttons">
-        <button onclick="verPDF('PDF/documento_medicina_15.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_15.pdf')">Descargar</button>
+        <button onclick="verPDF('PDF/archivo26.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/archivo26.pdf')">Descargar</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1519,13 +1552,13 @@
      data-termino="31/12/2025"
      data-informe="Pendiente"
      data-sesion="Pendiente">
-    <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina" class="pdf-img">
+    <img src="imagenes/pdf-icono28.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202523303</p>
     <p><strong>INVESTIGADOR:</strong> TORRES GARCÍA DANTE IAN</p>
     <div class="card-buttons">
-        <button onclick="verPDF('PDF/documento_medicina_23.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_23.pdf')">Descargar</button>
+        <button onclick="verPDF('PDF/archivo28.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/archivo28.pdf')">Descargar</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1569,13 +1602,13 @@
      data-termino="31/12/2025"
      data-informe="Pendiente"
      data-sesion="Pendiente">
-    <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina" class="pdf-img">
+    <img src="imagenes/pdf-icono34.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202538316</p>
     <p><strong>INVESTIGADOR:</strong> SAIRE ESPINOZA NAYELI IVONNE</p>
     <div class="card-buttons">
-        <button onclick="verPDF('PDF/documento_medicina_25.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_25.pdf')">Descargar</button>
+        <button onclick="verPDF('PDF/archivo34.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/archivo34.pdf')">Descargar</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1819,13 +1852,13 @@
      data-termino="31/01/2026"
      data-informe="Pendiente"
      data-sesion="Pendiente">
-    <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 8" class="pdf-img">
+    <img src="imagenes/pdf-icono37.jpg" alt="Documento Medicina 8" class="pdf-img">
     <h3>UNIVERSIDAD DE SAN MARTÍN DE PORRES</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202542576</p>
     <p><strong>INVESTIGADOR:</strong> VERA YAMAGUCHI STEPHANIE YURIKO</p>
     <div class="card-buttons">
-        <button onclick="verPDF('PDF/documento_medicina_8.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_8.pdf')">Descargar</button>
+        <button onclick="verPDF('PDF/archivo37.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/archivo37.pdf')">Descargar</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1869,13 +1902,13 @@
      data-termino="31/01/2026"
      data-informe="Pendiente"
      data-sesion="Pendiente">
-    <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 10" class="pdf-img">
+    <img src="imagenes/pdf-icono38.jpg" alt="Documento Medicina 10" class="pdf-img">
     <h3>PONTIFICIA UNIVERSIDAD CATÓLICA DEL PERÚ</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202544478</p>
     <p><strong>INVESTIGADOR:</strong> MHAX KERSSY HENRY TELLO TELLO</p>
     <div class="card-buttons">
-        <button onclick="verPDF('PDF/documento_medicina_10.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_10.pdf')">Descargar</button>
+        <button onclick="verPDF('PDF/archivo38.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/archivo38.pdf')">Descargar</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1894,13 +1927,13 @@
      data-termino="31/01/2026"
      data-informe="Pendiente"
      data-sesion="Pendiente">
-    <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 11" class="pdf-img">
+    <img src="imagenes/pdf-icono39.jpg" alt="Documento Medicina 11" class="pdf-img">
     <h3>UNIVERSIDAD NORBERT WIENER</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202531515</p>
     <p><strong>INVESTIGADOR:</strong> ORE LARA CLAUDIA ALEXANDRA</p>
     <div class="card-buttons">
-        <button onclick="verPDF('PDF/documento_medicina_11.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_11.pdf')">Descargar</button>
+        <button onclick="verPDF('PDF/archivo39.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/archivo39.pdf')">Descargar</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informativo - Proyectos de Investigación</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #f0f4ff;
+            color: #1c2a3d;
+            padding: 10px;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Título con fondo azul */
+        .titulo-informativo {
+            background-color: #0b3558;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* Contenedor de botones */
+        .botones-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            max-width: 95%;
+            margin: 0 auto;
+            padding: 10px;
+            flex: 1;
+        }
+
+        /* Estilo de los botones */
+        .boton-informativo {
+            background-color: #62a8ea;
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .boton-informativo:hover {
+            background-color: #5295d6;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .boton-informativo:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .boton-informativo::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%, -50%);
+            transform-origin: 50% 50%;
+        }
+
+        .boton-informativo:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+
+        /* Botón para volver */
+        .volver-btn {
+            background-color: #0b3558;
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 20px auto;
+            display: block;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .volver-btn:hover {
+            background-color: #1c7ed6;
+            transform: scale(1.05);
+        }
+
+        /* Modal para mostrar el PDF */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            position: relative;
+            width: 95%;
+            max-width: 900px;
+            height: 90%;
+            margin: auto;
+            padding: 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #aaa;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 1001;
+        }
+
+        .modal-close-btn:hover {
+            color: #000;
+        }
+
+        #pdfViewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Media Queries para diferentes tamaños de pantalla */
+        @media (min-width: 768px) {
+            .titulo-informativo {
+                font-size: 2rem;
+                padding: 20px;
+                margin-bottom: 30px;
+            }
+
+            .boton-informativo {
+                padding: 20px 40px;
+                font-size: 1.3rem;
+                max-width: 500px;
+            }
+
+            .botones-container {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Título -->
+    <div class="titulo-informativo">
+        CONOCE SOBRE LOS PROYECTOS
+    </div>
+
+    <!-- Botones -->
+    <div class="botones-container">
+        <button class="boton-informativo" onclick="verGuiaProyecto()">GUÍA PARA LA ELABORACIÓN DE PROYECTO DE INVESTIGACIÓN</button>
+        <button class="boton-informativo" onclick="verPrioridadesNacionales()">PRIORIDADES NACIONALES DE INVESTIGACIÓN EN SALUD</button>
+    </div>
+
+    <!-- Botón para volver -->
+    <button class="volver-btn" onclick="window.location.href='index.html'">Volver</button>
+
+    <!-- Modal para mostrar el PDF -->
+    <div id="visor" class="modal">
+        <div class="modal-content">
+            <button onclick="ocultarPDF()" class="modal-close-btn">&times;</button>
+            <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <!-- Script para manejar la apertura y cierre del modal -->
+    <script>
+        function verGuiaProyecto() {
+            const visor = document.getElementById("visor");
+            const pdfViewer = document.getElementById("pdfViewer");
+            pdfViewer.src = 'PDF/guia_elaboracion_proyecto.pdf';
+            visor.style.display = "flex";
+        }
+
+        function verPrioridadesNacionales() {
+            const visor = document.getElementById("visor");
+            const pdfViewer = document.getElementById("pdfViewer");
+            pdfViewer.src = 'PDF/prioridades_nacionales_investigacion.pdf';
+            visor.style.display = "flex";
+        }
+
+        function ocultarPDF() {
+            const visor = document.getElementById("visor");
+            const pdfViewer = document.getElementById("pdfViewer");
+            visor.style.display = "none";
+            pdfViewer.src = "";
+        }
+    </script>
+</body>
+</html>

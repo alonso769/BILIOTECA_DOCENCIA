@@ -66,47 +66,51 @@ function ocultarDetalles() {
 
 // --- Filtros ---
 const searchName = document.getElementById("searchName");
-const searchDate = document.getElementById("searchDate");
+const searchTitulo = document.getElementById("searchTitulo");
+const searchEstado = document.getElementById("searchEstado");
 const searchEspecialidad = document.getElementById("searchEspecialidad");
-const allGroups = document.querySelectorAll(".pdf-group");
+const searchEntidad = document.getElementById("searchEntidad");
 
 function filtrar() {
-    const nombre = searchName.value.toLowerCase();
-    const fecha = searchDate.value;
+    const nombreInvestigador = searchName.value.toLowerCase();
+    const tituloProyecto = searchTitulo.value.toLowerCase();
+    const estado = searchEstado.value;
     const especialidad = searchEspecialidad.value;
+    const entidad = searchEntidad.value;
 
-    allGroups.forEach(group => {
-        let groupHasVisibleCards = false;
-        const cardsInGroup = group.querySelectorAll('.pdf-card');
-        
-        cardsInGroup.forEach(card => {
-            const nombreCard = card.dataset.nombre.toLowerCase();
-            const fechaCard = card.dataset.fecha;
-            const especialidadCard = card.dataset.especialidad;
+    const allCards = document.querySelectorAll('.pdf-card');
 
-            const coincideNombre = nombreCard.includes(nombre);
-            const coincideFecha = fecha === "" || fechaCard === fecha;
-            const coincideEspecialidad = especialidad === "" || especialidadCard === especialidad;
+    allCards.forEach(card => {
+        const nombreCard = card.dataset.investigador.toLowerCase();
+        const tituloCard = card.dataset.titulo.toLowerCase();
+        const estadoCard = card.dataset.estado;
+        const especialidadCard = card.dataset.especialidad;
+        const entidadCard = card.dataset.entidad;
 
-            if (coincideNombre && coincideFecha && coincideEspecialidad) {
-                card.style.display = "block";
-                groupHasVisibleCards = true;
-            } else {
-                card.style.display = "none";
-            }
-        });
+        const coincideNombre = nombreCard.includes(nombreInvestigador);
+        const coincideTitulo = tituloCard.includes(tituloProyecto);
+        const coincideEstado = estado === "" || estadoCard.includes(estado);
+        const coincideEspecialidad = especialidad === "" || especialidadCard === especialidad;
+        const coincideEntidad = entidad === "" || entidadCard.includes(entidad);
 
-        if (groupHasVisibleCards || especialidad === "") {
-            group.style.display = "block";
+        if (coincideNombre && coincideTitulo && coincideEstado && coincideEspecialidad && coincideEntidad) {
+            card.style.display = "block";
         } else {
-            group.style.display = "none";
+            card.style.display = "none";
         }
     });
 }
 
-searchName.addEventListener("input", filtrar);
-searchDate.addEventListener("input", filtrar);
-searchEspecialidad.addEventListener("change", filtrar);
+// Elimina o comenta estos listeners:
+// searchName.addEventListener("input", filtrar);
+// searchTitulo.addEventListener("input", filtrar);
+// searchEstado.addEventListener("change", filtrar);
+// searchEspecialidad.addEventListener("change", filtrar);
+// searchEntidad.addEventListener("change", filtrar);
+
+// Agrega el listener para el botón "Filtrar"
+document.getElementById("btnFiltrar").addEventListener("click", filtrar);
+
 
 // --- Lógica del Carrusel de Imágenes ---
 let slideIndex = 1;
@@ -140,3 +144,14 @@ setInterval(() => {
     slideIndex++;
     showSlides(slideIndex);
 }, 5000);
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+    });
+});

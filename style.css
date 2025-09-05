@@ -11,14 +11,13 @@ body {
     color: #1c2a3d;
 }
 
-/* --- Header "Pegajoso" --- */
 .header {
     background-color: #0b3558;
     color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
+    padding: 15px 20px;
     position: sticky;
     top: 0;
     z-index: 20;
@@ -45,6 +44,41 @@ body {
 .header .nav-menu a:hover {
     color: #62a8ea;
 }
+
+.menu-toggle {
+    display: none; /* Ocultar en pantallas grandes */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Estilos responsivos para el menú de navegación */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostrar botón de menú en móviles */
+    }
+
+    .header .nav-menu {
+        display: none; /* Ocultar menú por defecto en móviles */
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #0b3558;
+        padding: 10px;
+    }
+
+    .header .nav-menu.active {
+        display: flex; /* Mostrar menú cuando esté activo */
+    }
+}
+
 
 /* --- Carrusel de Imágenes --- */
 .image-carousel-container {
@@ -422,5 +456,134 @@ iframe {
   transform: rotate(10deg) scale(1.1);
 }
 
+.pdf-card h3 {
+    font-size: 0.85rem;
+    color: #0b3558;
+    margin-bottom: 8px;
+    min-height: 50px; /* Altura mínima para 2 líneas de texto */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.pdf-card p {
+    font-size: 0.75rem;
+    color: #444;
+    margin-bottom: 8px;
+    min-height: 40px; /* Altura mínima para 2 líneas de texto */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+}
+.pdf-meta {
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 10px;
+    min-height: 36px; /* Altura mínima para 2 líneas de texto */
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.pdf-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    min-height: 120px; /* Altura mínima para acomodar título + investigador + metadatos */
+}
+.pdf-card .card-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: auto; /* Empuja los botones hacia abajo */
+}
+.btn-filtrar {
+    background-color: #62a8ea;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-filtrar:hover {
+    background-color: #1c7ed6;
+}
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .filter-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-box input,
+    .filter-box select {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .btn-filtrar {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .pdf-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .pdf-card {
+        max-width: 100%;
+    }
+}
+
+
+
+/* Estilos responsivos para el menú de navegación */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .header .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .header .nav-menu a {
+        display: block;
+        padding: 8px;
+    }
+
+    .header .logo {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+}
 
 
