@@ -80,7 +80,7 @@ body {
 }
 
 
-/* --- Carrusel de Imágenes --- */
+/* --- Carrusel de Imágenes (Ajustes responsivos) --- */
 .image-carousel-container {
     position: relative;
     width: 100%;
@@ -92,7 +92,8 @@ body {
 .image-carousel {
     display: flex;
     position: relative;
-    height: 450px;
+    height: 60vh; /* Cambia la altura fija a un valor relativo al viewport */
+    max-height: 450px; /* Altura máxima para pantallas grandes */
 }
 
 .image-slide {
@@ -125,25 +126,27 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 3rem;
+    font-size: 2.2rem; /* Tamaño de fuente relativo */
     font-weight: bold;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     z-index: 1;
+    text-align: center;
+    width: 90%; /* Asegura que el texto no toque los bordes */
 }
 
 .image-dots {
     position: absolute;
-    bottom: 20px;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 10px;
+    gap: 8px;
     z-index: 10;
 }
 
 .dot {
-    height: 12px;
-    width: 12px;
+    height: 10px;
+    width: 10px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     cursor: pointer;
@@ -153,6 +156,19 @@ body {
 .dot.active {
     background-color: white;
 }
+
+/* Ajustes específicos para móviles */
+@media (max-width: 768px) {
+    .image-carousel {
+        height: 40vh; /* Altura más pequeña en móviles */
+    }
+
+    .image-text {
+        font-size: 1.5rem; /* Tamaño de fuente más pequeño en móviles */
+        letter-spacing: 1px;
+    }
+}
+
 
 /* --- Contenido principal y filtros --- */
 .main-container {

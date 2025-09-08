@@ -67,15 +67,13 @@ function ocultarDetalles() {
 // --- Filtros ---
 const searchName = document.getElementById("searchName");
 const searchTitulo = document.getElementById("searchTitulo");
-const searchEstado = document.getElementById("searchEstado");
-const searchEspecialidad = document.getElementById("searchEspecialidad");
+
 const searchEntidad = document.getElementById("searchEntidad");
 
 function filtrar() {
     const nombreInvestigador = searchName.value.toLowerCase();
     const tituloProyecto = searchTitulo.value.toLowerCase();
-    const estado = searchEstado.value;
-    const especialidad = searchEspecialidad.value;
+ 
     const entidad = searchEntidad.value;
 
     const allCards = document.querySelectorAll('.pdf-card');
@@ -83,17 +81,15 @@ function filtrar() {
     allCards.forEach(card => {
         const nombreCard = card.dataset.investigador.toLowerCase();
         const tituloCard = card.dataset.titulo.toLowerCase();
-        const estadoCard = card.dataset.estado;
-        const especialidadCard = card.dataset.especialidad;
+        
         const entidadCard = card.dataset.entidad;
 
         const coincideNombre = nombreCard.includes(nombreInvestigador);
         const coincideTitulo = tituloCard.includes(tituloProyecto);
-        const coincideEstado = estado === "" || estadoCard.includes(estado);
-        const coincideEspecialidad = especialidad === "" || especialidadCard === especialidad;
+        
         const coincideEntidad = entidad === "" || entidadCard.includes(entidad);
 
-        if (coincideNombre && coincideTitulo && coincideEstado && coincideEspecialidad && coincideEntidad) {
+        if (coincideNombre && coincideTitulo && coincideEntidad) {
             card.style.display = "block";
         } else {
             card.style.display = "none";
