@@ -11,6 +11,7 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', sans-serif;
         }
+
         body {
             background-color: #f0f4ff;
             color: #1c2a3d;
@@ -20,26 +21,29 @@
             display: flex;
             flex-direction: column;
         }
+
         .titulo-informativo {
             background-color: #0b3558;
             color: white;
             text-align: center;
             padding: 15px;
-            font-size: 1.4rem;
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
             font-weight: bold;
             margin-bottom: 20px;
             border-radius: 10px;
             margin-top: 20px;
         }
+
         .botones-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 15px;
-            max-width: 95%;
+            max-width: 100%;
             margin: 0 auto;
             padding: 10px;
             flex: 1;
         }
+
         .boton-informativo {
             background-color: #62a8ea;
             color: white;
@@ -48,7 +52,7 @@
             padding: 20px;
             border-radius: 15px;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: clamp(0.8rem, 2vw, 1rem);
             width: 100%;
             height: 120px;
             text-align: center;
@@ -59,16 +63,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            word-break: break-word;
+            padding: 10px;
+            text-align: center;
         }
+
         .boton-informativo:hover {
             background-color: #5295d6;
             transform: translateY(-3px);
             box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
         }
+
         .boton-informativo:active {
             transform: translateY(1px);
             box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
         }
+
         .boton-informativo::after {
             content: "";
             position: absolute;
@@ -82,13 +92,16 @@
             transform: scale(1, 1) translate(-50%, -50%);
             transform-origin: 50% 50%;
         }
+
         .boton-informativo:focus:not(:active)::after {
             animation: ripple 1s ease-out;
         }
+
         @keyframes ripple {
             0% { transform: scale(0, 0); opacity: 0.5; }
             100% { transform: scale(20, 20); opacity: 0; }
         }
+
         .volver-btn {
             background-color: #0b3558;
             color: white;
@@ -103,10 +116,12 @@
             transition: all 0.3s ease;
             width: fit-content;
         }
+
         .volver-btn:hover {
             background-color: #1c7ed6;
             transform: scale(1.05);
         }
+
         .modal {
             display: none;
             position: fixed;
@@ -120,6 +135,7 @@
             justify-content: center;
             align-items: center;
         }
+
         .modal-content {
             background-color: #fefefe;
             position: relative;
@@ -131,6 +147,7 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
+
         .modal-close-btn {
             position: absolute;
             top: 10px;
@@ -143,17 +160,38 @@
             border: none;
             z-index: 1001;
         }
+
         .modal-close-btn:hover {
             color: #000;
         }
+
         #pdfViewer {
             width: 100%;
             height: 100%;
             border: none;
         }
+
+        @media (max-width: 1024px) {
+            .botones-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
         @media (max-width: 768px) {
             .botones-container {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .botones-container {
+                grid-template-columns: 1fr;
+            }
+
+            .boton-informativo {
+                height: auto;
+                min-height: 100px;
+                padding: 15px;
             }
         }
     </style>
@@ -166,13 +204,13 @@
         <button class="boton-informativo" onclick="verGuiaProyecto()">GUÍA PARA LA ELABORACIÓN DE PROYECTO DE INVESTIGACIÓN</button>
         <button class="boton-informativo" onclick="verPrioridadesNacionales()">PRIORIDADES NACIONALES DE INVESTIGACIÓN EN SALUD</button>
         <button class="boton-informativo" onclick="verBoton1()">NORMA TÉCNICA DE BIOSEGURIDAD</button>
-        <button class="boton-informativo" onclick="verBoton2()"> NORMAS DEL SISTEMA DE REFERENCIA Y CONTRAREFERENCIA</button>
-        <button class="boton-informativo" onclick="verBoton3()">NORMA TÉCNICA DE SALUD PARA TRANSPORTE ASISTIDO DE PACIENTES POR VIA TERRESTRE</button>
-        <button class="boton-informativo" onclick="verBoton4()">NORMAS PARA LA NOTIFICACION DE ENFERMEDADES SUJETAS A VIGILANCIA</button>
-        <button class="boton-informativo" onclick="verBoton5()">NORMAS PARA USO, MANEJO, CONSERVACION Y DEPURACION DE HISTORIAS CLINICAS</button>
-        <button class="boton-informativo" onclick="verBoton6()">NORMAS DE LIMPIEZA, DESINFECCION Y ESTERILIZACION</button>
+        <button class="boton-informativo" onclick="verBoton2()">NORMAS DEL SISTEMA DE REFERENCIA Y CONTRAREFERENCIA</button>
+        <button class="boton-informativo" onclick="verBoton3()">NORMA TÉCNICA DE SALUD PARA TRANSPORTE ASISTIDO DE PACIENTES POR VÍA TERRESTRE</button>
+        <button class="boton-informativo" onclick="verBoton4()">NORMAS PARA LA NOTIFICACIÓN DE ENFERMEDADES SUJETAS A VIGILANCIA</button>
+        <button class="boton-informativo" onclick="verBoton5()">NORMAS PARA USO, MANEJO, CONSERVACIÓN Y DEPURACIÓN DE HISTORIAS CLÍNICAS</button>
+        <button class="boton-informativo" onclick="verBoton6()">NORMAS DE LIMPIEZA, DESINFECCIÓN Y ESTERILIZACIÓN</button>
         <button class="boton-informativo" onclick="verBoton7()">NORMA TÉCNICA DE SALUD IAAS</button>
-        <button class="boton-informativo" onclick="verBoton8()">MANUAL DE PROCEDIMIENTOS DE OPERACION NORMALIZADA PARA MICROBIOLGIA QUIMICA INMUNOLOGIA</button>
+        <button class="boton-informativo" onclick="verBoton8()">MANUAL DE PROCEDIMIENTOS DE OPERACIÓN NORMALIZADA PARA MICROBIOLOGÍA, QUÍMICA E INMUNOLOGÍA</button>
         <button class="boton-informativo" onclick="verBoton9()">SALUD Y SEGURIDAD EN EL TRABAJO</button>
         <button class="boton-informativo" onclick="verBoton10()">MANUAL DE SALUD Y SEGURIDAD EN EL TRABAJO</button>
     </div>
@@ -203,6 +241,7 @@
             pdfViewer.src = ruta;
             visor.style.display = "flex";
         }
+
         function ocultarPDF() {
             const visor = document.getElementById("visor");
             const pdfViewer = document.getElementById("pdfViewer");
