@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artículos Científicos - Biblioteca</title>
+    <style>
+        /* Reset básico y estilos globales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Encabezado */
+        .header {
+            background-color: #1e5aa8;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #add8e6;
+        }
+
+        /* Banner */
+        .banner {
+            background-color: #1e5aa8;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+        }
+
+        .banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Contenido principal */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            color: #1e5aa8;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* Lista de artículos */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-image {
+            height: 200px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        .article-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            background-color: white;
+        }
+
+        .article-info {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-title {
+            color: #1e5aa8;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+
+        .article-authors {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            min-height: 48px;
+        }
+
+        .article-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .view-btn, .download-btn {
+            flex: 1;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 500;
+            text-align: center;
+            border: none;
+        }
+
+        .view-btn {
+            background-color: #1e5aa8;
+            color: white;
+        }
+
+        .download-btn {
+            background-color: white;
+            color: #1e5aa8;
+            border: 1px solid #1e5aa8;
+        }
+
+        /* Pie de página */
+        .footer {
+            background-color: #1e5aa8;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* Modal para visualizar PDF */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            position: relative;
+            width: 90%;
+            max-width: 900px;
+            height: 90%;
+            margin: auto;
+            padding: 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #aaa;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 1001;
+        }
+
+        .modal-close-btn:hover {
+            color: #000;
+        }
+
+        #pdfViewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="logo">REPOSITORIO VIRTUAL</div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="articulos.html">Artículos</a></li>
+                <li><a href="informativo.html">Informativo</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h1>UNIDAD FUNCIONAL DE DOCENCIA E INVESTIGACIÓN</h1>
+    </section>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <h2 class="section-title">Artículos Científicos</h2>
+
+        <!-- Lista de artículos -->
+        <div class="articles-grid">
+            <!-- Artículo 1 -->
+            <div class="article-card">
+                <div class="article-image">
+                    <img src="imagenes/articulo1.jpg" alt="Portada artículo 1">
+                </div>
+                <div class="article-info">
+                    <h3 class="article-title">Visita Domiciliaria. La Percepción Materna y la Nutrición Infantil en un Establecimiento de Salud de Lima Centro</h3>
+                    <p class="article-authors">Alicia Lucia Ludeña Leon / Edwin Joel Ticlla Colunche</p>
+                    <div class="article-actions">
+                        <a href="#" class="view-btn" onclick="verPDF('PDF/articulo1.pdf')">Ver PDF</a>
+                        <a href="PDF/articulo1.pdf" class="download-btn" download>Descargar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo 2 -->
+            <div class="article-card">
+                <div class="article-image">
+                    <img src="imagenes/articulo2.jpg" alt="Portada artículo 2">
+                </div>
+                <div class="article-info">
+                    <h3 class="article-title">Prevalencia de Marcadores Infecciosos y Factores Asociados en Donantes de un Banco de Sangre Peruano</h3>
+                    <p class="article-authors">Miryam Danitza More-Yupanqu / Pamela Canelo-Marruffo / Martha Miranda-Watanabe / Alessandra León-Herrera / Guliana Díaz-Romano / Oliver Sulca-Huamaní / Antonio Narrea-Cango / Isabel Pinedo-Torres</p>
+                    <div class="article-actions">
+                        <a href="#" class="view-btn" onclick="verPDF('PDF/articulo2.pdf')">Ver PDF</a>
+                        <a href="PDF/articulo2.pdf" class="download-btn" download>Descargar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo 3 -->
+            <div class="article-card">
+                <div class="article-image">
+                    <img src="imagenes/articulo3.jpg" alt="Portada artículo 3">
+                </div>
+                <div class="article-info">
+                    <h3 class="article-title">Análisis de la Implementación del Componente de Determinantes de la Salud en el Programa de Tuberculosis</h3>
+                    <p class="article-authors">Alicia Lucia Ludeña Leon</p>
+                    <div class="article-actions">
+                        <a href="#" class="view-btn" onclick="verPDF('PDF/articulo3.pdf')">Ver PDF</a>
+                        <a href="PDF/articulo3.pdf" class="download-btn" download>Descargar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <p>&copy; 2025 Biblioteca de Artículos Científicos. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Modal para visualizar PDF -->
+    <div id="visor" class="modal">
+        <div class="modal-content">
+            <button onclick="ocultarPDF()" class="modal-close-btn">&times;</button>
+            <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <!-- Script para manejar la visualización de PDFs -->
+    <script>
+        function verPDF(ruta) {
+            const visor = document.getElementById("visor");
+            const pdfViewer = document.getElementById("pdfViewer");
+            pdfViewer.src = ruta;
+            visor.style.display = "flex";
+        }
+
+        function ocultarPDF() {
+            const visor = document.getElementById("visor");
+            const pdfViewer = document.getElementById("pdfViewer");
+            visor.style.display = "none";
+            pdfViewer.src = "";
+        }
+    </script>
+</body>
+</html>
