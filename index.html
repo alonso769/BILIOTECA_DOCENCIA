@@ -1952,12 +1952,20 @@
     </main>
     
     <!-- MODAL DEL VISOR DE PDF -->
-    <div id="visor" class="modal">
-        <div class="modal-content">
-            <button onclick="ocultarPDF()" class="modal-close-btn">&times;</button>
-            <iframe id="pdfViewer" src=""></iframe>
+<div id="visor" class="modal">
+    <div class="modal-content">
+        <button onclick="ocultarPDF()" class="modal-close-btn">&times;</button>
+        <div id="pdfViewerContainer">
+            <div id="pdfControls" style="text-align: center; margin-bottom: 10px;">
+                <button id="pdfPrev" style="margin-right: 10px;">Anterior</button>
+                <span id="pageNumDisplay">Página 1</span>
+                <button id="pdfNext" style="margin-left: 10px;">Siguiente</button>
+            </div>
+            <canvas id="pdfCanvas"></canvas>
         </div>
     </div>
+</div>
+
 
    <!-- MODAL PARA VER DETALLES -->
 <div id="detallesModal" class="modal">
