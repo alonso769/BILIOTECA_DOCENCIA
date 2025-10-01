@@ -260,3 +260,35 @@ document.addEventListener('DOMContentLoaded', function() {
         navMenu.classList.toggle('active');
     });
 });
+
+
+
+function filtrar() {
+    const nombreInvestigador = searchName.value.toLowerCase();
+    const tituloProyecto = searchTitulo.value.toLowerCase();
+    const entidad = searchEntidad.value;
+    const informeFinal = document.getElementById("searchInformeFinal").value;
+
+    const allCards = document.querySelectorAll('.pdf-card');
+
+    allCards.forEach(card => {
+        const nombreCard = card.dataset.investigador.toLowerCase();
+        const tituloCard = card.dataset.titulo.toLowerCase();
+        const entidadCard = card.dataset.entidad;
+        const tieneInforme = card.dataset.tieneInforme;
+
+        // Verificaciones
+        const coincideNombre = nombreInvestigador === '' || nombreCard.includes(nombreInvestigador);
+        const coincideTitulo = tituloProyecto === '' || tituloCard.includes(tituloProyecto);
+        const coincideEntidad = entidad === '' || entidadCard === entidad;
+        const coincideInforme = informeFinal === '' || tieneInforme === informeFinal;
+
+        // Mostrar solo si cumple TODOS los filtros
+        if (coincideNombre && coincideTitulo && coincideEntidad && coincideInforme) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+

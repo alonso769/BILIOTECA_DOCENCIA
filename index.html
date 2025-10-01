@@ -70,6 +70,12 @@
         <option value="UNIVERSIDAD SEÑOR DE SIPAN">UNIVERSIDAD SEÑOR DE SIPAN</option>
         <option value="CONCYTEC">CONCYTEC</option>
     </select>
+     <select id="searchInformeFinal" style="margin-right: 10px; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+        <option value="">Todos (con/sin informe)</option>
+        <option value="true">Con informe final</option>
+        <option value="false">Sin informe final</option>
+    </select>
+    
     <button id="btnFiltrar" class="btn-filtrar">Filtrar</button>
 </div>
 
@@ -93,14 +99,16 @@
              data-inicio="17/02/2025"
              data-termino="31/08/2025"
              data-informe="Pendiente"
-             data-sesion="7/02/2025">
+             data-sesion="7/02/2025"
+              data-tiene-informe="false">
             <img src="imagenes/pdf-icono43.jpg" alt="Documento Medicina 1" class="pdf-img">
             <h3>UNIVERSIDAD PRIVADA DEL NORTE</h3>
             <p><strong>HOJA DE TRÁMITE:</strong>202478241</p>
             <p><strong>INVESTIGADOR:</strong>OBLITAS PEREYRA OLENKA MARIA</p>
+            <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
             <div class="card-buttons">
                 <button onclick="verPDF('PDF/archivo43.pdf')">Ver PDF</button>
-                <button onclick="descargarPDF('PDF/archivo43.pdf')">Descargar</button>
+                <button onclick="descargarPDF('PDF/archivo43.pdf')">Ver Informe Final</button>
                 <button onclick="verDetalles(this)">Ver Detalles</button>
             </div>
         </div>
@@ -118,14 +126,16 @@
              data-inicio="27/05/2025"
              data-termino="30/11/2025"
              data-informe="Pendiente"
-             data-sesion="Pendiente">
+             data-sesion="Pendiente"
+              data-tiene-informe="false">
             <img src="imagenes/pdf-icono45.jpg" alt="Documento Medicina 1" class="pdf-img">
             <h3>UNIVERSIDAD NACIONAL FEDERICO VILLARREAL</h3>
             <p><strong>HOJA DE TRÁMITE:</strong>202509569</p>
             <p><strong>INVESTIGADOR:</strong>ISLA TRAUCO  CARITO STEFANY</p>
+            <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
             <div class="card-buttons">
                 <button onclick="verPDF('PDF/archivo45.pdf')">Ver PDF</button>
-                <button onclick="descargarPDF('PDF/archivo45.pdf')">Descargar</button>
+                <button onclick="descargarPDF('PDF/archivo45.pdf')">Ver Informe Final</button>
                 <button onclick="verDetalles(this)">Ver Detalles</button>
             </div>
         </div>
@@ -143,7 +153,8 @@
      data-inicio="17/01/2025"
      data-termino="31/07/2025"
      data-informe="09/01/2024"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <div class="pdf-img-container">
         <img src="imagenes/pdf-icono2.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
@@ -151,10 +162,11 @@
         <h3>UNIVERSIDAD PERUANA CAYETANO HEREDIA</h3>
         <p><strong>HOJA DE TRÁMITE:</strong> 202473499</p>
         <p><strong>INVESTIGADOR:</strong> CARRASCO ESCOBAR GABRIEL, PATRICIA ESPINOZA GABRIEL CARRASCO</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     </div>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo2.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo2.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo2.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -172,7 +184,8 @@
      data-inicio="17/01/2025"
      data-termino="31/07/2025"
      data-informe="09/01/2024"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <div class="pdf-img-container">
         <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
@@ -180,10 +193,11 @@
         <h3>UNIVERSIDAD PERUANA CAYETANO HEREDIA, SJL</h3>
         <p><strong>HOJA DE TRÁMITE:</strong> 202477469</p>
         <p><strong>INVESTIGADOR:</strong> GOTUZZO HERENCIA EDUARDO JOSÉ</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     </div>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/documento_medicina_2.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_2.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/documento_medicina_2.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -201,7 +215,8 @@
      data-inicio="17/01/2025"
      data-termino="31/07/2025"
      data-informe="09/01/2024"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <div class="pdf-img-container">
         <img src="imagenes/pdf-icono49.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
@@ -209,10 +224,11 @@
         <h3>UNIVERSIDAD NORBERT WIENER</h3>
         <p><strong>HOJA DE TRÁMITE:</strong> 202477210</p>
         <p><strong>INVESTIGADOR:</strong> GIRALDO TORRES PABLO</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     </div>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo49.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo49.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo49.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -230,7 +246,8 @@
      data-inicio="17/01/2025"
      data-termino="31/07/2025"
      data-informe="09/01/2024"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <div class="pdf-img-container">
         <img src="imagenes/pdf-icono51.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
@@ -238,10 +255,11 @@
         <h3>UNIVERSIDAD PERUANA CAYETANO HEREDIA</h3>
         <p><strong>HOJA DE TRÁMITE:</strong> 202477654</p>
         <p><strong>INVESTIGADOR:</strong> CÁCERES PALACIOS CARLOS FERNANDO</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     </div>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo51.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo51.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo51.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -259,7 +277,8 @@
      data-inicio="17/02/2025"
      data-termino="31/08/2025"
      data-informe="31/08/2025"
-     data-sesion="07/02/2025">
+     data-sesion="07/02/2025"
+      data-tiene-informe="true">
     <div class="pdf-img-container">
         <img src="imagenes/pdf-icono44.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
@@ -267,6 +286,7 @@
         <h3>UNIVERSIDAD NORBERT WIENER</h3>
         <p><strong>HOJA DE TRÁMITE:</strong> 202480782</p>
         <p><strong>INVESTIGADOR:</strong> CAMONES CABRERA JEAN PIERRE GUSTAVO</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Con informe final</span></p>
     </div>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo44.pdf')">Ver PDF</button>
@@ -288,7 +308,8 @@
      data-inicio="17/02/2025"
      data-termino="31/08/2025"
      data-informe="07/02/2025"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <div class="pdf-img-container">
         <img src="imagenes/pdf-icono47.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
@@ -296,10 +317,11 @@
         <h3>UNIVERSIDAD TECNOLÓGICA DEL PERÚ</h3>
         <p><strong>HOJA DE TRÁMITE:</strong> 202500560</p>
         <p><strong>INVESTIGADOR:</strong> QUISPE SANCHEZ RUTH ELIANE</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     </div>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo47.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo47.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo47.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -319,7 +341,8 @@
      data-inicio="Pendiente"
      data-termino="Pendiente"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <div class="pdf-img-container">
         <img src="imagenes/pdf-icono17.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
@@ -327,10 +350,11 @@
         <h3>UNIVERSIDAD PRIVADA SAN JUAN BAUTISTA</h3>
         <p><strong>HOJA DE TRÁMITE:</strong> 202513160</p>
         <p><strong>INVESTIGADOR:</strong> ALIAGA CABANILLAS ELIAS JESÚS</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     </div>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo17.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo17.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo17.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -350,7 +374,8 @@
      data-inicio="16/06/2025"
      data-termino="31/12/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <div class="pdf-img-container">
         <img src="imagenes/pdf-icono13.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
@@ -358,10 +383,11 @@
         <h3>UNIVERSIDAD NORBERT WIENER</h3>
         <p><strong>HOJA DE TRÁMITE:</strong> 202518722</p>
         <p><strong>INVESTIGADOR:</strong> GOMEZ RAPRAY VALERIA JOSELYN</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     </div>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo13.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo13.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo13.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -383,7 +409,8 @@
      data-inicio="26/06/2025"
      data-termino="31/12/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <div class="pdf-img-container">
         <img src="imagenes/pdf-icono29.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
@@ -391,10 +418,11 @@
         <h3>UNIVERSIDAD PERUANA CAYETANO HEREDIA</h3>
         <p><strong>HOJA DE TRÁMITE:</strong> 202527744</p>
         <p><strong>INVESTIGADOR:</strong> PAJUELO TRAVEZANO MONICA JEHNNY, MENDOZA LOZADA ANA SOFIA</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     </div>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo29.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo29.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo29.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -412,7 +440,8 @@
      data-inicio="26/06/2025"
      data-termino="31/12/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <div class="pdf-img-container">
         <img src="imagenes/pdf-icono30.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
@@ -420,10 +449,11 @@
         <h3>UNIVERSIDAD NORBERT WIENER</h3>
         <p><strong>HOJA DE TRÁMITE:</strong> 202530901</p>
         <p><strong>INVESTIGADOR:</strong> RAMOS CARPIO LIZ MILAGROS</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     </div>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo30.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo30.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo30.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -441,7 +471,8 @@
      data-inicio="26/06/2025"
      data-termino="31/12/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <div class="pdf-img-container">
         <img src="imagenes/pdf-icono32.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
@@ -449,10 +480,11 @@
         <h3>UNIVERSIDAD PERUANA CAYETANO HEREDIA</h3>
         <p><strong>HOJA DE TRÁMITE:</strong> 202533845</p>
         <p><strong>INVESTIGADOR:</strong> BEZARES TRUJILLANO ROSSANA EDITH, MENDOZA LOZADA ANA SOFIA</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     </div>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo32.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo32.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo32.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -470,7 +502,8 @@
      data-inicio="26/06/2025"
      data-termino="31/12/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <div class="pdf-img-container">
         <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
@@ -478,10 +511,11 @@
         <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
         <p><strong>HOJA DE TRÁMITE:</strong> 202536316</p>
         <p><strong>INVESTIGADOR:</strong> SAIRE ESPINOZA NAVELI YVONNE</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     </div>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/documento_medicina_24.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_24.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/documento_medicina_24.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -500,7 +534,8 @@
      data-inicio="17/02/2025"
      data-termino="31/08/2025"
      data-informe="07/02/2025"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <div class="pdf-img-container">
         <img src="imagenes/pdf-icono40.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
@@ -508,10 +543,11 @@
         <h3>UNIVERSIDAD RICARDO PALMA</h3>
         <p><strong>HOJA DE TRÁMITE:</strong> 202500889</p>
         <p><strong>INVESTIGADOR:</strong> NAVARRO CASTRO ESTELA MARÍA</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     </div>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo40.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo40.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo40.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -529,7 +565,8 @@
      data-inicio="17/02/2025"
      data-termino="31/08/2025"
      data-informe="07/02/2025"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <div class="pdf-img-container">
         <img src="imagenes/pdf-icono42.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
@@ -537,10 +574,11 @@
         <h3>UNIVERSIDAD NORBERT WIENER</h3>
         <p><strong>HOJA DE TRÁMITE:</strong> 202500890</p>
         <p><strong>INVESTIGADOR:</strong> MENDOZA MORALES NATHALY RAQUEL</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     </div>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo42.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo42.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo42.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -558,7 +596,8 @@
      data-inicio="17/02/2025"
      data-termino="31/08/2025"
      data-informe="07/02/2025"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <div class="pdf-img-container">
         <img src="imagenes/pdf-icono50.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
@@ -566,10 +605,11 @@
         <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
         <p><strong>HOJA DE TRÁMITE:</strong> 202503311</p>
         <p><strong>INVESTIGADOR:</strong> VALENCIA RIVERA MIRIAM</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     </div>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo50.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo50.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo50.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -589,7 +629,8 @@
      data-inicio="27/05/2025"
      data-termino="30/11/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <div class="pdf-img-container">
         <img src="imagenes/pdf-icono46.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
@@ -597,10 +638,11 @@
         <h3>UNIVERSIDAD NORBERT WIENER</h3>
         <p><strong>HOJA DE TRÁMITE:</strong> 202507850</p>
         <p><strong>INVESTIGADOR:</strong> VENEGAS VELASQUEZ PATRICIA</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     </div>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo46.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo46.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo46.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -618,7 +660,8 @@
      data-inicio="27/05/2025"
      data-termino="30/11/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <div class="pdf-img-container">
         <img src="imagenes/pdf-icono56.jpg" alt="Documento Medicina" class="pdf-img">
     </div>
@@ -626,10 +669,11 @@
         <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
         <p><strong>HOJA DE TRÁMITE:</strong> 202510508</p>
         <p><strong>INVESTIGADOR:</strong> TORRES PEÑA MARÍA DEL ROSARIO</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     </div>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo56.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo56.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo56.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -650,14 +694,16 @@
              data-inicio="16/06/2025"
              data-termino="31/12/2025"
              data-informe="Pendiente"
-             data-sesion="Pendiente">
+             data-sesion="Pendiente"
+              data-tiene-informe="false">
             <img src="imagenes/pdf-icono25.jpg" alt="Documento Medicina 1" class="pdf-img">
             <h3>SOCIOS EN SALUD SUCURSAL PERU</h3>
             <p><strong>HOJA DE TRÁMITE:</strong>202519210</p>
             <p><strong>INVESTIGADOR:</strong>MAC RAE THAYS JHON RICHARD JAMES</p>
+            <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
             <div class="card-buttons">
                 <button onclick="verPDF('PDF/archivo25.pdf')">Ver PDF</button>
-                <button onclick="descargarPDF('PDF/archivo25.pdf')">Descargar</button>
+                <button onclick="descargarPDF('PDF/archivo25.pdf')">Ver Informe Final</button>
                 <button onclick="verDetalles(this)">Ver Detalles</button>
             </div>
         </div>
@@ -675,14 +721,16 @@
              data-inicio="26/06/2025"
              data-termino="31/12/2025"
              data-informe="Pendiente"
-             data-sesion="7/02/2025">
+             data-sesion="7/02/2025"
+              data-tiene-informe="false">
             <img src="imagenes/pdf-icono33.jpg" alt="Documento Medicina 1" class="pdf-img">
             <h3>UNIVERSIDAD DE SAN MARTIN DE PORRES</h3>
             <p><strong>HOJA DE TRÁMITE:</strong>202535223</p>
             <p><strong>INVESTIGADOR:</strong>QUIÑONEZ FLORES XIOMARA YAMILE</p>
+            <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
             <div class="card-buttons">
                 <button onclick="verPDF('PDF/archivo33.pdf')">Ver PDF</button>
-                <button onclick="descargarPDF('PDF/archivo33.pdf')">Descargar</button>
+                <button onclick="descargarPDF('PDF/archivo33.pdf')">Ver Informe Final</button>
                 <button onclick="verDetalles(this)">Ver Detalles</button>
             </div>
         </div>
@@ -700,14 +748,16 @@
              data-inicio="16/06/2025"
              data-termino="31/12/2025"
              data-informe="Pendiente"
-             data-sesion="Pendiente">
+             data-sesion="Pendiente"
+              data-tiene-informe="false">
             <img src="imagenes/pdf-icono24.jpg" alt="Documento Medicina 1" class="pdf-img">
             <h3>UNIVERSIDAD NORBERT WIENER</h3>
             <p><strong>HOJA DE TRÁMITE:</strong>202517035</p>
             <p><strong>INVESTIGADOR:</strong>BAUTISTA HERNANDEZ MAYRA ALEXANDRA</p>
+            <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
             <div class="card-buttons">
                 <button onclick="verPDF('PDF/archivo24.pdf')">Ver PDF</button>
-                <button onclick="descargarPDF('PDF/archivo24.pdf')">Descargar</button>
+                <button onclick="descargarPDF('PDF/archivo24.pdf')">Ver Informe Final</button>
                 <button onclick="verDetalles(this)">Ver Detalles</button>
             </div>
         </div>
@@ -729,14 +779,16 @@
              data-inicio="07/07/2025"
              data-termino="31/01/2026"
              data-informe="Pendiente"
-             data-sesion="Pendiente">
+             data-sesion="Pendiente"
+              data-tiene-informe="false">
             <img src="imagenes/pdf-icono35.jpg" alt="Documento Medicina 1" class="pdf-img">
             <h3>UNIVERSIDAD RICARDO PALMA</h3>
             <p><strong>HOJA DE TRÁMITE:</strong>202535235</p>
             <p><strong>INVESTIGADOR:</strong>ALARCÓN RUESTA NICOLE STEFANI</p>
+            <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
             <div class="card-buttons">
                 <button onclick="verPDF('PDF/archivo35.pdf')">Ver PDF</button>
-                <button onclick="descargarPDF('PDF/archivo35.pdf')">Descargar</button>
+                <button onclick="descargarPDF('PDF/archivo35.pdf')">Ver Informe Final</button>
                 <button onclick="verDetalles(this)">Ver Detalles</button>
             </div>
         </div>
@@ -753,14 +805,16 @@
              data-inicio="07/07/2025"
              data-termino="31/08/2025"
              data-informe="Pendiente"
-             data-sesion="Pendiente">
+             data-sesion="Pendiente"
+              data-tiene-informe="false">
             <img src="imagenes/pdf-icono36.jpg" alt="Documento Medicina 1" class="pdf-img">
             <h3>UNIVERSIDAD RICARDO PALMA</h3>
             <p><strong>HOJA DE TRÁMITE:</strong>202536181</p>
             <p><strong>INVESTIGADOR:</strong>VILLEGAS HUERTAS LEONARDO</p>
+            <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
             <div class="card-buttons">
                 <button onclick="verPDF('PDF/archivo36.pdf')">Ver PDF</button>
-                <button onclick="descargarPDF('PDF/archivo36.pdf')">Descargar</button>
+                <button onclick="descargarPDF('PDF/archivo36.pdf')">Ver Informe Final</button>
                 <button onclick="verDetalles(this)">Ver Detalles</button>
             </div>
         </div>
@@ -778,14 +832,16 @@
              data-inicio="23/06/2025"
              data-termino="31/12/2025"
              data-informe="Pendiente"
-             data-sesion="Pendiente">
+             data-sesion="Pendiente"
+              data-tiene-informe="false">
             <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 1" class="pdf-img">
             <h3>CONCYTEC</h3>
             <p><strong>HOJA DE TRÁMITE:</strong>202525998</p>
             <p><strong>INVESTIGADOR:</strong>SIXTO ENRIQUE SANCHEZ CALDERON</p>
+            <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
             <div class="card-buttons">
                 <button onclick="verPDF('PDF/documento_medicina_1.pdf')">Ver PDF</button>
-                <button onclick="descargarPDF('PDF/documento_medicina_1.pdf')">Descargar</button>
+                <button onclick="descargarPDF('PDF/documento_medicina_1.pdf')">Ver Informe Final</button>
                 <button onclick="verDetalles(this)">Ver Detalles</button>
             </div>
         </div>
@@ -802,14 +858,16 @@
      data-inicio="05/06/2025"
      data-termino="31/12/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono16.jpg" alt="Documento Medicina 1" class="pdf-img">
     <h3>INSTITUTO DE INVESTIGACIÓN NUTRICIONAL</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202513535</p>
     <p><strong>INVESTIGADOR:</strong> ECKER LEDESMA LUCIE</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo16.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo16.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo16.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -827,14 +885,16 @@
      data-inicio="27/05/2025"
      data-termino="30/11/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono53.jpg" alt="Documento Medicina 2" class="pdf-img">
     <h3>INSTITUTO DE INVESTIGACIÓN NUTRICIONAL</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202507865</p>
     <p><strong>INVESTIGADOR:</strong> LANATA DE LAS CASAS CLAUDIO FRANCO</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo53.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo53.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo53.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -852,14 +912,16 @@
      data-inicio="23/06/2025"
      data-termino="31/12/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 3" class="pdf-img">
     <h3>INSTITUTO DE INVESTIGACIÓN NUTRICIONAL</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202521923</p>
     <p><strong>INVESTIGADOR:</strong> HERRERA ACUÑA TEOBALDO</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/documento_medicina_3.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_3.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/documento_medicina_3.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -877,14 +939,16 @@
      data-inicio="16/06/2025"
      data-termino="31/12/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono23.jpg" alt="Documento Medicina 4" class="pdf-img">
     <h3>PONTIFICIA UNIVERSIDAD CATÓLICA DEL PERÚ</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202516719</p>
     <p><strong>INVESTIGADOR:</strong> GIANELLA MALCA CAMILA</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo23.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo23.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo23.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -903,14 +967,16 @@
      data-inicio="27/05/2025"
      data-termino="30/11/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono20.jpg" alt="Documento Medicina 6" class="pdf-img">
     <h3>SOCIOS EN SALUD SUCURSAL PERÚ</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202505490</p>
     <p><strong>INVESTIGADOR:</strong> MENDOZA TICONA CARLOS ALBERTO</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo20.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo20.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo20.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -928,14 +994,16 @@
      data-inicio="17/02/2025"
      data-termino="31/08/2025"
      data-informe="Pendiente"
-     data-sesion="07/02/2025">
+     data-sesion="07/02/2025"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono55.jpg" alt="Documento Medicina 7" class="pdf-img">
     <h3>UNIVERSIDAD CÉSAR VALLEJO</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202480886</p>
     <p><strong>INVESTIGADOR:</strong> MAURICIO CARRIÓN FABRIZIO GIOVANNI SALINAS GERÓNIMO ARIANA BEATRIZ</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo55.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo55.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo55.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -953,14 +1021,16 @@
      data-inicio="26/06/2025"
      data-termino="31/12/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono31.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD CÉSAR VALLEJO</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202532057</p>
     <p><strong>INVESTIGADOR:</strong> GARCÍA CARRANZA JUAN ALFONSO, SECCA DA VILA MELANY NAZIRA</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo31.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo31.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo31.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -982,14 +1052,16 @@
      data-inicio="21/08/2025"
      data-termino="28/08/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono64.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD DE SAN MARTÍN DE PORRES</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202546936</p>
     <p><strong>INVESTIGADOR:</strong> ZAPATER VELAZCO KARLO</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo63.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo63.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo63.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1008,14 +1080,16 @@
      data-inicio="17/01/2025"
      data-termino="31/07/2025"
      data-informe="Pendiente"
-     data-sesion="03/01/2024">
+     data-sesion="03/01/2024"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono41.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL DANIEL ALCIDES CARRIÓN</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202476879</p>
     <p><strong>INVESTIGADOR:</strong> COZ ARIAS LADY MIRELLA</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo41.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo41.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo41.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1033,14 +1107,16 @@
      data-inicio="05/06/2025"
      data-termino="31/12/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono22.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL FEDERICO VILLARREAL</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202512912</p>
     <p><strong>INVESTIGADOR:</strong> PALACIOS OBREGÓN ROSARIO PATRICIA</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo22.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo22.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo22.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1058,14 +1134,16 @@
      data-inicio="23/06/2025"
      data-termino="31/12/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono26.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL FEDERICO VILLARREAL</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202521068</p>
     <p><strong>INVESTIGADOR:</strong> BARRIOS MONTALVO SHANY</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo26.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo26.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo26.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1083,14 +1161,16 @@
      data-inicio="07/07/2025"
      data-termino="31/01/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono5.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL FEDERICO VILLARREAL</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202537574</p>
     <p><strong>INVESTIGADOR:</strong> QUISPE NUÑEZ GISELA KATY</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo5.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo5.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo5.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1108,14 +1188,16 @@
      data-inicio="17/01/2025"
      data-termino="31/07/2025"
      data-informe="Pendiente"
-     data-sesion="01/01/2024">
+     data-sesion="01/01/2024"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono54.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202474530</p>
     <p><strong>INVESTIGADOR:</strong> PERALTA BRICEÑO KAROL ASTRID</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo54.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo54.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo54.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1133,14 +1215,16 @@
      data-inicio="17/01/2025"
      data-termino="31/07/2025"
      data-informe="Pendiente"
-     data-sesion="03/01/2024">
+     data-sesion="03/01/2024"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono48.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202476000</p>
     <p><strong>INVESTIGADOR:</strong> ARENAS PARRAGUIRRE CARLOS ALBERTO</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo48.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo48.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo48.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1158,14 +1242,16 @@
      data-inicio="27/05/2025"
      data-termino="30/11/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono52.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202504421</p>
     <p><strong>INVESTIGADOR:</strong> CARHUAJULCA DIEZ ANNIE LIZET</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo52.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo52.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo52.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1183,14 +1269,16 @@
      data-inicio="16/06/2025"
      data-termino="31/12/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono15.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202516636</p>
     <p><strong>INVESTIGADOR:</strong> HUARIPOMA QUICHUA ROGER CHRISTIAN</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo15.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo15.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo15.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1208,14 +1296,16 @@
      data-inicio="16/06/2025"
      data-termino="31/12/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono12.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202519231</p>
     <p><strong>INVESTIGADOR:</strong> PAZ SALAZAR PEDRO ALEJANDRO</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo12.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo12.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo12.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1233,14 +1323,16 @@
      data-inicio="16/06/2025"
      data-termino="31/12/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202521027</p>
     <p><strong>INVESTIGADOR:</strong> VILLAFUERTE GUERRERO AARON PIERO</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/documento_medicina_22.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_22.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/documento_medicina_22.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1258,14 +1350,16 @@
      data-inicio="23/06/2025"
      data-termino="31/12/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono28.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202523303</p>
     <p><strong>INVESTIGADOR:</strong> TORRES GARCÍA DANTE IAN</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo28.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo28.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo28.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1283,17 +1377,115 @@
      data-inicio="26/06/2025"
      data-termino="31/12/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono8.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202530292</p>
     <p><strong>INVESTIGADOR:</strong> WONG MATOS JENNIFER</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo8.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo8.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo8.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
+
+<div class="pdf-card"
+     data-hoja="202555830"
+     data-titulo="ANÁLISIS DE LA IMPLEMENTACIÓN DEL ENFOQUE COMUNITARIO DE SALUD MENTAL (2018-2025): ESTUDIO DE CASO DEL CSMC 'HONORIO DELGADO' EN PUEBLO LIBRE"
+     data-investigador="CASTILLO MONTALVO NAVELI"
+     data-celular="957 718 124"
+     data-correo="navelicastillo9995@gmail.com"
+     data-entidad="UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS"
+     data-eess="CSMC HONORIO DELGADO"
+     data-solicitud="AUTORIZACIÓN DE EJECUCIÓN"
+     data-estado="Aprobado Constancia N°65"
+     data-inicio="16/09/2025"
+     data-termino="31/06/2025"
+     data-informe="31/06/2025"
+     data-sesion="Pendiente"
+     data-tiene-informe="false"> <!-- Asumí que no tiene informe final aún -->
+    <div class="pdf-img-container">
+        <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina" class="pdf-img">
+    </div>
+    <div class="pdf-info">
+        <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
+        <p><strong>HOJA DE TRÁMITE:</strong> 202555830</p>
+        <p><strong>INVESTIGADOR:</strong> CASTILLO MONTALVO NAVELI</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
+    </div>
+    <div class="card-buttons">
+        <button onclick="verPDF('PDF/documento_202555830.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/documento_20255830.pdf')">Ver Informe Final</button>
+        <button onclick="verDetalles(this)">Ver Detalles</button>
+    </div>
+</div>
+
+
+<div class="pdf-card"
+     data-hoja="202560058"
+     data-titulo="FACTORES ASOCIADOS A LA ELECCIÓN DE MÉTODOS ANTICONCEPTIVOS EN USUARIAS DEL C.S SAN MIGUEL BERTORINI JORDÁN, 2025"
+     data-investigador="HURTADO MALDONADO VANESSA NICOLE"
+     data-celular="980 878 276"
+     data-correo="vanessa.hurtado.03@hotmail.com"
+     data-entidad="UNIVERSIDAD NORBERT WIENER"
+     data-eess="C.S. SAN MIGUEL"
+     data-solicitud="AUTORIZACIÓN DE EJECUCIÓN"
+     data-estado="Aprobado Constancia N°69"
+     data-inicio="16/09/2025"
+     data-termino="31/06/2025"
+     data-informe="31/06/2025"
+     data-sesion="Pendiente"
+     data-tiene-informe="false">
+    <div class="pdf-img-container">
+        <img src="imagenes/pdf-icono67.jpg" alt="Documento Medicina" class="pdf-img">
+    </div>
+    <div class="pdf-info">
+        <h3>UNIVERSIDAD NORBERT WIENER</h3>
+        <p><strong>HOJA DE TRÁMITE:</strong> 202560058</p>
+        <p><strong>INVESTIGADOR:</strong> HURTADO MALDONADO VANESSA NICOLE</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
+    </div>
+    <div class="card-buttons">
+        <button onclick="verPDF('PDF/archivo67.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/documento_202560058.pdf')">Ver Informe Final</button>
+        <button onclick="verDetalles(this)">Ver Detalles</button>
+    </div>
+</div>
+
+
+<div class="pdf-card"
+     data-hoja="202557276"
+     data-titulo="ACCESO EN SALUD Y SU RELACIÓN CON LA CALIDAD DE VIDA EN USUARIOS REFERIDOS AL CSMC MANGOMARCA, 2025"
+     data-investigador="VILCHEZ LAVADO HAROLD CLAESEN"
+     data-celular="922 307 002"
+     data-correo="HVILCHEZLAVADO@GMAIL.COM"
+     data-entidad="UNIVERSIDAD NACIONAL FEDERICO VILLARREAL"
+     data-eess="CSMC MANGOMARCA"
+     data-solicitud="AUTORIZACIÓN DE EJECUCIÓN"
+     data-estado="Aprobado Constancia N°67"
+     data-inicio="16/09/2025"
+     data-termino="31/06/2025"
+     data-informe="31/06/2025"
+     data-sesion="Pendiente"
+     data-tiene-informe="false">
+    <div class="pdf-img-container">
+        <img src="imagenes/pdf-icono68.jpg" alt="Documento Medicina" class="pdf-img">
+    </div>
+    <div class="pdf-info">
+        <h3>UNIVERSIDAD NACIONAL FEDERICO VILLARREAL</h3>
+        <p><strong>HOJA DE TRÁMITE:</strong> 202557276</p>
+        <p><strong>INVESTIGADOR:</strong> VILCHEZ LAVADO HAROLD CLAESEN</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
+    </div>
+    <div class="card-buttons">
+        <button onclick="verPDF('PDF/archivo68.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/documento_202557276.pdf')">Ver Informe Final</button>
+        <button onclick="verDetalles(this)">Ver Detalles</button>
+    </div>
+</div>
+
 
 <div class="pdf-card"
      data-hoja="202536316"
@@ -1308,17 +1500,114 @@
      data-inicio="26/06/2025"
      data-termino="31/12/2025"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+     data-tiene-informe="false">
     <img src="imagenes/pdf-icono34.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202538316</p>
     <p><strong>INVESTIGADOR:</strong> SAIRE ESPINOZA NAYELI IVONNE</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo34.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo34.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo34.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
+
+<div class="pdf-card"
+     data-hoja="202559535"
+     data-titulo="CONOCIMIENTOS SOBRE EL CUIDADO DEL RECIÉN NACIDO EN EL HOGAR DE LAS MADRES QUE ACUDEN A UN CENTRO DE SALUD DE LIMA, 2025"
+     data-investigador="HUAMAN HINOSTROZA FABIOLA VIVIANA YARE"
+     data-celular="971 217 132"
+     data-correo="fabioleyare15@gmail.com"
+     data-entidad="UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS"
+     data-eess="C.S. MAX ARIAS SCHREIBER"
+     data-solicitud="AUTORIZACIÓN DE EJECUCIÓN"
+     data-estado="Aprobado Constancia N°68"
+     data-inicio="16/09/2025"
+     data-termino="31/06/2025"
+     data-informe="31/06/2025"
+     data-sesion="Pendiente"
+     data-tiene-informe="false">
+    <div class="pdf-img-container">
+        <img src="imagenes/pdf-icono69.jpg" alt="Documento Medicina" class="pdf-img">
+    </div>
+    <div class="pdf-info">
+        <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
+        <p><strong>HOJA DE TRÁMITE:</strong> 202559535</p>
+        <p><strong>INVESTIGADOR:</strong> HUAMAN HINOSTROZA FABIOLA VIVIANA YARE</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
+    </div>
+    <div class="card-buttons">
+        <button onclick="verPDF('PDF/archivo69.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/documento_202559535.pdf')">Ver Informe Final</button>
+        <button onclick="verDetalles(this)">Ver Detalles</button>
+    </div>
+</div>
+
+
+<div class="pdf-card"
+     data-hoja="202562159"
+     data-titulo="NIVEL DE CONOCIMIENTO DE LAS MADRES SOBRE LA LACTANCIA MATERNA EXCLUSIVA Y EL ESTADO NUTRICIONAL DE LOS LACTANTES MENORES DE 6 MESES QUE ACUDEN AL SERVICIO DE CRED EN EL C.S. JESÚS MARÍA, 2025"
+     data-investigador="MENDOZA ALVAREZ ROSA ALBERTINA; LEON DAVILA GLADYS RUBY"
+     data-celular="933 615 722; 995 515 553"
+     data-correo="rosatinam61@gmail.com; ruby22leon@gmail.com"
+     data-entidad="UNIVERSIDAD DE SAN MARTÍN DE PORRES"
+     data-eess="C.S. JESÚS MARÍA"
+     data-solicitud="AUTORIZACIÓN DE EJECUCIÓN"
+     data-estado="Aprobado Constancia N°72"
+     data-inicio="24/09/2025"
+     data-termino="31/06/2025"
+     data-informe="31/06/2025"
+     data-sesion="Pendiente"
+     data-tiene-informe="false">
+    <div class="pdf-img-container">
+        <img src="imagenes/pdf-icono70.jpg" alt="Documento Medicina" class="pdf-img">
+    </div>
+    <div class="pdf-info">
+        <h3>UNIVERSIDAD DE SAN MARTÍN DE PORRES</h3>
+        <p><strong>HOJA DE TRÁMITE:</strong> 202562159</p>
+        <p><strong>INVESTIGADORES:</strong> MENDOZA ALVAREZ ROSA ALBERTINA, LEON DAVILA GLADYS RUBY</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
+    </div>
+    <div class="card-buttons">
+        <button onclick="verPDF('PDF/archivo70.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/documento_202562159.pdf')">Ver Informe Final</button>
+        <button onclick="verDetalles(this)">Ver Detalles</button>
+    </div>
+</div>
+
+<div class="pdf-card"
+     data-hoja="202561567"
+     data-titulo="CALIDAD DE ATENCIÓN DE ENFERMERÍA Y SU RELACIÓN CON LA SATISFACCIÓN DE MADRES USUARIAS DE NIÑOS MENORES DE 3 AÑOS QUE ACUDEN A LOS CONTROLES DE CRED EN EL C.S. BREÑA, LIMA 2025"
+     data-investigador="APOLIN MATOS ASTRID LILIANA; PALMA RODRÍGUEZ AYLIN TAMARA"
+     data-celular="948 363 701; 915 056 714"
+     data-correo="lilianaastridpolin@gmail.com; aylin.palma.rodriguez@hotmail.com"
+     data-entidad="UNIVERSIDAD NORBERT WIENER"
+     data-eess="C.S. BREÑA"
+     data-solicitud="AUTORIZACIÓN DE EJECUCIÓN"
+     data-estado="Aprobado Constancia N°71"
+     data-inicio="24/09/2025"
+     data-termino="30/06/2025"
+     data-informe="30/06/2025"
+     data-sesion="Pendiente"
+     data-tiene-informe="false">
+    <div class="pdf-img-container">
+        <img src="imagenes/pdf-icono71.jpg" alt="Documento Medicina" class="pdf-img">
+    </div>
+    <div class="pdf-info">
+        <h3>UNIVERSIDAD NORBERT WIENER</h3>
+        <p><strong>HOJA DE TRÁMITE:</strong> 202561567</p>
+        <p><strong>INVESTIGADORES:</strong> APOLIN MATOS ASTRID LILIANA, PALMA RODRÍGUEZ AYLIN TAMARA</p>
+        <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
+    </div>
+    <div class="card-buttons">
+        <button onclick="verPDF('PDF/archivo71.pdf')">Ver PDF</button>
+        <button onclick="descargarPDF('PDF/documento_202561567.pdf')">Ver Informe Final</button>
+        <button onclick="verDetalles(this)">Ver Detalles</button>
+    </div>
+</div>
+
 
 <div class="pdf-card"
      data-hoja="202536288"
@@ -1333,14 +1622,16 @@
      data-inicio="07/07/2025"
      data-termino="31/01/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202536288</p>
     <p><strong>INVESTIGADOR:</strong> MONTENEGRO IDROGO JUAN JOSÉ</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/documento_medicina_26.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_26.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/documento_medicina_26.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1358,14 +1649,16 @@
      data-inicio="07/07/2025"
      data-termino="31/01/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono7.jpg" alt="Documento Medicina" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202536427</p>
     <p><strong>INVESTIGADOR:</strong> MOQUILLAZA ALCÁNTARA VICTOR HUGO</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo7.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo7.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo7.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1383,14 +1676,16 @@
      data-inicio="7/07/2025"
      data-termino="31/01/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 1" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL FEDERICO VILLARREAL</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202537574</p>
     <p><strong>INVESTIGADOR:</strong> QUISPE NUÑEZ GISELA KATY</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/documento_medicina_1.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_1.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/documento_medicina_1.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1408,14 +1703,16 @@
      data-inicio="7/07/2025"
      data-termino="31/01/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono6.jpg" alt="Documento Medicina 2" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202536773</p>
     <p><strong>INVESTIGADOR:</strong> VELARDE CHU CARLOS DANIEL</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo6.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo6.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo6.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1433,14 +1730,16 @@
      data-inicio="7/07/2025"
      data-termino="31/01/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+     data-tiene-informe="false">
     <img src="imagenes/pdf-icono4.jpg" alt="Documento Medicina 3" class="pdf-img">
     <h3>UNIVERSIDAD CÉSAR VALLEJO</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202538684</p>
     <p><strong>INVESTIGADOR:</strong> TELLO RIERA DANA ESTHER, CLEMENTE CONDORI RAQUEL SARAI</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo4.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo4.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo4.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1458,14 +1757,16 @@
      data-inicio="10/07/2025"
      data-termino="31/01/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+     data-tiene-informe="false">
     <img src="imagenes/pdf-icono10.jpg" alt="Documento Medicina 4" class="pdf-img">
     <h3>UNIVERSIDAD NORBERT WIENER</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202529042</p>
     <p><strong>INVESTIGADOR:</strong> ECHEVERRIA CUBAS FELIX RAUL</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo10.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo10.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo10.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1485,14 +1786,16 @@
      data-inicio="10/07/2025"
      data-termino="31/01/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+     data-tiene-informe="false">
     <img src="imagenes/pdf-icono3.jpg" alt="Documento Medicina 6" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202539606</p>
     <p><strong>INVESTIGADOR:</strong> SANDON TAFUR XIMENA MIKAELA</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo3.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo3.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo3.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1512,14 +1815,16 @@
      data-inicio="10/07/2025"
      data-termino="31/01/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+     data-tiene-informe="false">
     <img src="imagenes/pdf-icono37.jpg" alt="Documento Medicina 8" class="pdf-img">
     <h3>UNIVERSIDAD DE SAN MARTÍN DE PORRES</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202542576</p>
     <p><strong>INVESTIGADOR:</strong> VERA YAMAGUCHI STEPHANIE YURIKO</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo37.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo37.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo37.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1537,14 +1842,16 @@
      data-inicio="10/07/2025"
      data-termino="31/01/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+     data-tiene-informe="false">
     <img src="imagenes/pdf-icono1.jpg" alt="Documento Medicina 9" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong>202543895</p>
     <p><strong>INVESTIGADOR:</strong> CUELLAR FLORENCIO MARÍA JACKELINE</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo1.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo1.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo1.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1562,14 +1869,16 @@
      data-inicio="10/07/2025"
      data-termino="31/01/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono38.jpg" alt="Documento Medicina 10" class="pdf-img">
     <h3>PONTIFICIA UNIVERSIDAD CATÓLICA DEL PERÚ</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202544478</p>
     <p><strong>INVESTIGADOR:</strong> MHAX KERSSY HENRY TELLO TELLO</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo38.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo38.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo38.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1587,14 +1896,16 @@
      data-inicio="10/07/2025"
      data-termino="31/01/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono39.jpg" alt="Documento Medicina 11" class="pdf-img">
     <h3>UNIVERSIDAD NORBERT WIENER</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202531515</p>
     <p><strong>INVESTIGADOR:</strong> ORE LARA CLAUDIA ALEXANDRA</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo39.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo39.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo39.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1612,14 +1923,16 @@
      data-inicio="21/08/2025"
      data-termino="28/08/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 12" class="pdf-img">
     <h3>UNIVERSIDAD PERUANA CAYETANO HEREDIA</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202547093</p>
     <p><strong>INVESTIGADOR:</strong> CARRASCO ESCOBAR GABRIEL, PATRICIA ESPINOZA GABRIEL CARRASCO</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/documento_medicina_12.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_12.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/documento_medicina_12.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1637,14 +1950,16 @@
      data-inicio="21/08/2025"
      data-termino="28/08/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono61.jpg" alt="Documento Medicina 13" class="pdf-img">
     <h3>UNIVERSIDAD NORBERT WIENER</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202547194</p>
     <p><strong>INVESTIGADOR:</strong> ABARCA ARCE DALILA</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo60.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo60.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo60.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1662,14 +1977,16 @@
      data-inicio="21/08/2025"
      data-termino="28/08/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 14" class="pdf-img">
     <h3>UNIVERSIDAD DE SAN MARTÍN DE PORRES</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202548696</p>
     <p><strong>INVESTIGADOR:</strong> ZAPATER VELASCO KARLO</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/documento_medicina_14.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_14.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/documento_medicina_14.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1687,14 +2004,16 @@
      data-inicio="21/08/2025"
      data-termino="28/08/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono65.jpg" alt="Documento Medicina 15" class="pdf-img">
     <h3>UNIVERSIDAD NORBERT WIENER</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202548312</p>
     <p><strong>INVESTIGADOR:</strong> TORRES BELLIDO JIMMY JORGE</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo64.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo64.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo64.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1712,14 +2031,16 @@
      data-inicio="21/08/2025"
      data-termino="28/08/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono63.jpg" alt="Documento Medicina 16" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202549407</p>
     <p><strong>INVESTIGADOR:</strong> RODRIGUEZ AROSTEGUI KELLY</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/arhivo62.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/arhivo62.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/arhivo62.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1737,14 +2058,16 @@
      data-inicio="21/08/2025"
      data-termino="28/08/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono62.jpg" alt="Documento Medicina 17" class="pdf-img">
     <h3>UNIVERSIDAD DE SAN MARTÍN DE PORRES</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202549857</p>
     <p><strong>INVESTIGADOR:</strong> CRUZ VALDIVIA ANA MARÍA</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo61.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo61.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo61.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1762,14 +2085,16 @@
      data-inicio="21/08/2025"
      data-termino="28/08/2026"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono60.jpg" alt="Documento Medicina 18" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 222549580</p>
     <p><strong>INVESTIGADOR:</strong> SALDAÑA HUAMANI JOSÉ LUIS</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo59.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo59.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo59.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1786,14 +2111,16 @@
      data-inicio="Pendiente"
      data-termino="Pendiente"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono59.jpg" alt="Documento Medicina 19" class="pdf-img">
     <h3>UNIVERSIDAD NORBERT WIENER</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202548847</p>
     <p><strong>INVESTIGADOR:</strong> BENDEZÚ LUCAS ANGÉLICA MILAGROS</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo58.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo58.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo58.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1810,14 +2137,16 @@
      data-inicio="Pendiente"
      data-termino="Pendiente"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono58.jpg" alt="Documento Medicina 20" class="pdf-img">
     <h3>UNIVERSIDAD NORBERT WIENER</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 20251896</p>
     <p><strong>INVESTIGADOR:</strong> ALACHE VILLAFAÑA MARJORIE JACQUELINE</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo57.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo57.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo57.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1834,14 +2163,16 @@
      data-inicio="Pendiente"
      data-termino="Pendiente"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 21" class="pdf-img">
     <h3>UNIVERSIDAD NORBERT WIENER</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202552601</p>
     <p><strong>INVESTIGADOR:</strong> BAUTISTA FUERTES SHIRLEY RUBÍ</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/documento_medicina_21.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_21.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/documento_medicina_21.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1858,14 +2189,16 @@
      data-inicio="Pendiente"
      data-termino="Pendiente"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 22" class="pdf-img">
     <h3>UNIVERSIDAD PERUANA CAYETANO HEREDIA</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202552984</p>
     <p><strong>INVESTIGADOR:</strong> CÁCERES PALACIOS CARLOS FERNANDO</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/documento_medicina_22.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_22.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/documento_medicina_22.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1882,14 +2215,16 @@
      data-inicio="Pendiente"
      data-termino="Pendiente"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 23" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL DE EDUCACIÓN ENRIQUE GUZMÁN Y VALLE</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202553011</p>
     <p><strong>INVESTIGADOR:</strong> GÓMEZ CRUZ JHESY JHASMIN, DIONY CASTAÑEDA GATILLÓN JANETH</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/documento_medicina_23.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_23.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/documento_medicina_23.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1906,14 +2241,16 @@
      data-inicio="Pendiente"
      data-termino="Pendiente"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 24" class="pdf-img">
     <h3>UNIVERSIDAD PERUANA CAYETANO HEREDIA, SJL</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202553442</p>
     <p><strong>INVESTIGADOR:</strong> GOTUZZO HERENCIA EDUARDO JOSÉ</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/documento_medicina_24.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_24.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/documento_medicina_24.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1945,7 +2282,7 @@
     </div>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/archivo66.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/archivo66.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/archivo66.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
@@ -1963,14 +2300,16 @@
      data-inicio="Pendiente"
      data-termino="Pendiente"
      data-informe="Pendiente"
-     data-sesion="Pendiente">
+     data-sesion="Pendiente"
+      data-tiene-informe="false">
     <img src="imagenes/pdf-icono.jpg" alt="Documento Medicina 25" class="pdf-img">
     <h3>UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS</h3>
     <p><strong>HOJA DE TRÁMITE:</strong> 202554955</p>
     <p><strong>INVESTIGADOR:</strong> CAYLLAHUA QUISPE YULISA</p>
+    <p><strong>INFORME FINAL:</strong> <span class="informe-status">Sin informe final</span></p>
     <div class="card-buttons">
         <button onclick="verPDF('PDF/documento_medicina_25.pdf')">Ver PDF</button>
-        <button onclick="descargarPDF('PDF/documento_medicina_25.pdf')">Descargar</button>
+        <button onclick="descargarPDF('PDF/documento_medicina_25.pdf')">Ver Informe Final</button>
         <button onclick="verDetalles(this)">Ver Detalles</button>
     </div>
 </div>
