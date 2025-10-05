@@ -14,6 +14,39 @@ let totalPages = 0;
 let isRendering = false;
 let scale = 1.5;
 
+// ===========================================
+// FUNCIONES AUXILIARES (NUEVAS Y MODIFICADAS)
+// ===========================================
+
+// 1. Normaliza el texto (elimina tildes/diacríticos)
+function normalizarTexto(texto) {
+    if (!texto) return '';
+    // Esta función se utiliza para mejorar la búsqueda sin distinguir acentos.
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+// 2. Control de Animación de Carga (4 segundos)
+function mostrarCargaTemporal() {
+    const overlay = document.getElementById('loadingOverlay');
+    if (!overlay) {
+        console.warn("El elemento con ID 'loadingOverlay' no fue encontrado. Asegúrate de tenerlo en tu HTML.");
+        return;
+    }
+    
+    // Muestra la capa de carga
+    overlay.style.display = 'flex'; // o 'block', según tu CSS
+    
+    // Oculta la capa de carga después de 4 segundos
+    setTimeout(() => {
+        overlay.style.display = 'none';
+    }, 4000); // 4000 milisegundos = 4 segundos
+}
+
+
+// ===========================================
+// LÓGICA DEL VISOR PDF (Tu código original)
+// ===========================================
+
 // Función para mostrar el PDF de forma segura
 function verPDF(ruta) {
     const visor = document.getElementById("visor");
@@ -149,7 +182,7 @@ function descargarPDF(ruta) {
     alert("La descarga de documentos está deshabilitada.");
 }
 
-// --- NUEVO: Ver detalles ---
+// --- Ver detalles (Tu código original) ---
 function verDetalles(btn) {
     const card = btn.closest('.pdf-card');
     const hoja = card.dataset.hoja || "No registrada";
@@ -192,59 +225,120 @@ function ocultarDetalles() {
     modal.style.display = "none";
 }
 
-// --- Filtros ---
+// --- Filtros (Definición de Inputs) ---
 const searchName = document.getElementById("searchName");
 const searchTitulo = document.getElementById("searchTitulo");
 const searchEntidad = document.getElementById("searchEntidad");
 
+
+// ===========================================
+// FUNCIÓN FILTRAR (Actualizada con Normalización y Carga)
+// ===========================================
 function filtrar() {
-    const nombreInvestigador = searchName.value.toLowerCase();
-    const tituloProyecto = searchTitulo.value.toLowerCase();
+    // 1. Mostrar la animación de carga temporal
+    mostrarCargaTemporal(); 
+    
+    // 2. Ejecutar la lógica de filtrado después de un breve momento
+    setTimeout(() => {
+        // Usa la función normalizarTexto() en los inputs y en los data-atributos
+        const nombreInvestigador = normalizarTexto(searchName.value).toLowerCase();
+        const tituloProyecto = normalizarTexto(searchTitulo.value).toLowerCase();
+        
+        const entidad = searchEntidad.value;
+        // Se asume que existe un elemento con ID 'searchInformeFinal'
+        const searchInformeFinal = document.getElementById("searchInformeFinal");
+        const informeFinal = searchInformeFinal ? searchInformeFinal.value : '';
 
-    const entidad = searchEntidad.value;
-    const allCards = document.querySelectorAll('.pdf-card');
-    allCards.forEach(card => {
-        const nombreCard = card.dataset.investigador.toLowerCase();
-        const tituloCard = card.dataset.titulo.toLowerCase();
 
-        const entidadCard = card.dataset.entidad;
-        const coincideNombre = nombreCard.includes(nombreInvestigador);
-        const coincideTitulo = tituloCard.includes(tituloProyecto);
+        const allCards = document.querySelectorAll('.pdf-card');
 
-        const coincideEntidad = entidad === "" || entidadCard.includes(entidad);
-        if (coincideNombre && coincideTitulo && coincideEntidad) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
-    });
+        allCards.forEach(card => {
+            const nombreCard = normalizarTexto(card.dataset.investigador).toLowerCase();
+            const tituloCard = normalizarTexto(card.dataset.titulo).toLowerCase();
+            const entidadCard = card.dataset.entidad;
+            // Se asume que la tarjeta tiene un data-tieneinforme
+            const tieneInforme = card.dataset.tieneInforme;
+
+            // Verificaciones
+            const coincideNombre = nombreInvestigador === '' || nombreCard.includes(nombreInvestigador);
+            const coincideTitulo = tituloProyecto === '' || tituloCard.includes(tituloProyecto);
+            const coincideEntidad = entidad === '' || entidadCard === entidad;
+            const coincideInforme = informeFinal === '' || tieneInforme === informeFinal;
+
+            // Mostrar solo si cumple TODOS los filtros
+            if (coincideNombre && coincideTitulo && coincideEntidad && coincideInforme) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    }, 50); // Pequeño delay para asegurar que la animación se inicie
 }
 
-// Agrega el listener para el botón "Filtrar"
-document.getElementById("btnFiltrar").addEventListener("click", filtrar);
 
-// --- Lógica del Carrusel de Imágenes ---
+// ===========================================
+// FUNCIÓN LIMPIAR FILTROS (Nueva, Integrada con Carga)
+// ===========================================
+function limpiarFiltros() {
+    // 1. Mostrar la animación de carga temporal
+    mostrarCargaTemporal(); 
+
+    // 2. Ejecutar la lógica de limpieza después de un breve momento
+    setTimeout(() => {
+        // Vaciar todos los campos de texto
+        document.getElementById("searchName").value = '';
+        document.getElementById("searchTitulo").value = '';
+        
+        // Restablecer los select
+        document.getElementById("searchEntidad").value = '';
+        const searchInformeFinal = document.getElementById("searchInformeFinal");
+        if (searchInformeFinal) {
+            searchInformeFinal.value = '';
+        }
+
+        // Mostrar todas las tarjetas
+        const allCards = document.querySelectorAll('.pdf-card');
+        allCards.forEach(card => {
+            card.style.display = "block";
+        });
+        
+        console.log("Filtros limpiados y todas las tarjetas mostradas.");
+    }, 50); // Pequeño delay para asegurar que la animación se inicie
+}
+
+
+// ===========================================
+// LISTENERS (Al final del script)
+// ===========================================
+
+// Agrega los listeners para los botones de Filtrar y Limpiar
+document.getElementById("btnFiltrar").addEventListener("click", filtrar);
+// Se asume que tu HTML ya tiene el botón con id="btnLimpiar"
+document.getElementById("btnLimpiar").addEventListener("click", limpiarFiltros); 
+
+
+// --- Lógica del Carrusel de Imágenes (Tu código original) ---
 let slideIndex = 1;
 showSlides(slideIndex);
 
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+    showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("image-slide");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].classList.remove('active-slide');
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].classList.remove('active');
-  }
-  slides[slideIndex-1].classList.add('active-slide');
-  dots[slideIndex-1].classList.add('active');
+    let i;
+    let slides = document.getElementsByClassName("image-slide");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].classList.remove('active-slide');
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].classList.remove('active');
+    }
+    slides[slideIndex-1].classList.add('active-slide');
+    dots[slideIndex-1].classList.add('active');
 }
 
 // Carrusel automático
@@ -260,37 +354,5 @@ document.addEventListener('DOMContentLoaded', function() {
         navMenu.classList.toggle('active');
     });
 });
-
-
-
-function filtrar() {
-    const nombreInvestigador = searchName.value.toLowerCase();
-    const tituloProyecto = searchTitulo.value.toLowerCase();
-    const entidad = searchEntidad.value;
-    const informeFinal = document.getElementById("searchInformeFinal").value;
-
-    const allCards = document.querySelectorAll('.pdf-card');
-
-    allCards.forEach(card => {
-        const nombreCard = card.dataset.investigador.toLowerCase();
-        const tituloCard = card.dataset.titulo.toLowerCase();
-        const entidadCard = card.dataset.entidad;
-        const tieneInforme = card.dataset.tieneInforme;
-
-        // Verificaciones
-        const coincideNombre = nombreInvestigador === '' || nombreCard.includes(nombreInvestigador);
-        const coincideTitulo = tituloProyecto === '' || tituloCard.includes(tituloProyecto);
-        const coincideEntidad = entidad === '' || entidadCard === entidad;
-        const coincideInforme = informeFinal === '' || tieneInforme === informeFinal;
-
-        // Mostrar solo si cumple TODOS los filtros
-        if (coincideNombre && coincideTitulo && coincideEntidad && coincideInforme) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
-    });
-}
-
 
 

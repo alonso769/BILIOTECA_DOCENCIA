@@ -534,8 +534,22 @@ iframe {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+.btn-limpiar {
+    background-color: #62a8ea;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
 .btn-filtrar:hover {
+    background-color: #1c7ed6;
+}
+
+.btn-limpiar:hover {
     background-color: #1c7ed6;
 }
 /* Ajustes para móviles */
@@ -554,6 +568,12 @@ iframe {
     }
 
     .btn-filtrar {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    .btn-limpiar {
         width: 100%;
         padding: 12px;
         font-size: 1rem;
