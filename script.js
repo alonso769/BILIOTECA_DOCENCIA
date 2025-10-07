@@ -202,19 +202,19 @@ function verDetalles(btn) {
     const contenido = document.getElementById("detallesContenido");
     contenido.innerHTML = `
         <h2>HOJA DE TRÁMITE: ${hoja}</h2>
-        <p><strong>Título del Proyecto:</strong> ${titulo}</p>
-        <p><strong>Investigador Principal:</strong> ${investigador}</p>
+        <p><strong>TÍTULO DEL PROYECTO:</strong> ${titulo}</p>
+        <p><strong>INVESTIGADOR PRINCIPAL:</strong> ${investigador}</p>
         <hr>
-        <p><strong>Celular:</strong> ${celular}</p>
-        <p><strong>Correo Electrónico:</strong> ${correo}</p>
-        <p><strong>Entidad:</strong> ${entidad}</p>
-        <p><strong>EESS de Ejecución:</strong> ${eess}</p>
-        <p><strong>Solicitud:</strong> ${solicitud}</p>
-        <p><strong>Estado de Constancia:</strong> ${estado}</p>
-        <p><strong>Fecha de Inicio:</strong> ${inicio}</p>
-        <p><strong>Fecha de Término:</strong> ${termino}</p>
-        <p><strong>Informe Final:</strong> ${informe}</p>
-        <p><strong>Fecha de Sesión Aprobación:</strong> ${sesion}</p>
+        <p><strong>CELULAR:</strong> ${celular}</p>
+        <p><strong>CORREO ELECTRÓNICO:</strong> ${correo}</p>
+        <p><strong>ENTIDAD:</strong> ${entidad}</p>
+        <p><strong>EESS DE EJECUCIÓN:</strong> ${eess}</p>
+        <p><strong>SOLICITUD:</strong> ${solicitud}</p>
+        <p><strong>ESTADO DE CONSTANCIA:</strong> ${estado}</p>
+        <p><strong>FECHA DE INICIO:</strong> ${inicio}</p>
+        <p><strong>FECHA DE TÉRMINO:</strong> ${termino}</p>
+        <p><strong>INFORME FINAL:</strong> ${informe}</p>
+        <p><strong>FECHA DE SESIÓN DE APROBACIÓN:</strong> ${sesion}</p>
     `;
     modal.style.display = "flex";
 }
