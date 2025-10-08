@@ -181,8 +181,7 @@ function ocultarPDF() {
 function descargarPDF(ruta) {
     alert("La descarga de documentos está deshabilitada.");
 }
-
-// --- Ver detalles (Tu código original) ---
+// --- Ver detalles (CÓDIGO ORIGINAL)
 function verDetalles(btn) {
     const card = btn.closest('.pdf-card');
     const hoja = card.dataset.hoja || "No registrada";
@@ -198,8 +197,15 @@ function verDetalles(btn) {
     const termino = card.dataset.termino || "No registrado";
     const informe = card.dataset.informe || "No registrado";
     const sesion = card.dataset.sesion || "No registrada";
+
+    // Cierra cualquier popover de explicación abierto antes de abrir el modal.
+    cerrarExplicacionGlobal(); 
+
     const modal = document.getElementById("detallesModal");
     const contenido = document.getElementById("detallesContenido");
+
+    // NOTA: Asegúrate de que 'detallesContenido' tenga 'position: relative' en tu CSS.
+
     contenido.innerHTML = `
         <h2>HOJA DE TRÁMITE: ${hoja}</h2>
         <p><strong>TÍTULO DEL PROYECTO:</strong> ${titulo}</p>
@@ -210,13 +216,114 @@ function verDetalles(btn) {
         <p><strong>ENTIDAD:</strong> ${entidad}</p>
         <p><strong>EESS DE EJECUCIÓN:</strong> ${eess}</p>
         <p><strong>SOLICITUD:</strong> ${solicitud}</p>
-        <p><strong>ESTADO DE CONSTANCIA:</strong> ${estado}</p>
+        <p><strong>ESTADO:</strong> ${estado}</p>
         <p><strong>FECHA DE INICIO:</strong> ${inicio}</p>
         <p><strong>FECHA DE TÉRMINO:</strong> ${termino}</p>
-        <p><strong>INFORME FINAL:</strong> ${informe}</p>
-        <p><strong>FECHA DE SESIÓN DE APROBACIÓN:</strong> ${sesion}</p>
+
+        <p style="display: flex; align-items: center;">
+            <strong>INFORME FINAL:</strong>
+            ${informe === "Pendiente" ? `<span class="informe-status">${informe}</span>` : informe}
+            <button class="info-btn" onclick="mostrarExplicacion('informe', event)">Explicación</button>
+        </p>
+
+        <p style="display: flex; align-items: center;">
+            <strong>FECHA DE SESIÓN DE APROBACIÓN:</strong> ${sesion}
+            <button class="info-btn" onclick="mostrarExplicacion('sesion', event)">Explicación</button>
+        </p>
+
+        <div class="card-buttons">
+            
+        </div>
     `;
+
     modal.style.display = "flex";
+}
+
+// Función para mostrar explicaciones (AJUSTE DE POSICIÓN MÁS BAJO)
+function mostrarExplicacion(tipo, event) {
+    event.stopPropagation();
+    const btn = event.currentTarget; 
+    const contenidoModal = document.getElementById("detallesContenido");
+
+    // Cierra cualquier popover existente antes de abrir uno nuevo
+    cerrarExplicacionGlobal(); 
+
+    // Crear el nuevo elemento popover
+    const popover = document.createElement('div');
+    popover.id = "popoverExplicacion";
+    popover.className = "explicacion-popover"; 
+    
+    // Configuración de tamaño (Mantener para consistencia)
+    popover.style.maxWidth = '300px'; 
+    popover.style.minWidth = '200px'; 
+
+    let tituloPopover = '';
+    let cuerpoHTML = '';
+
+    if (tipo === 'informe') {
+        tituloPopover = '¿QUÉ ES EL INFORME FINAL?';
+        cuerpoHTML = `
+            <ul>
+                <li>ES EL RESULTADO DE LA EJECUCIÓN DEL PROYECTO DE INVESTIGACIÓN QUE EL INVESTIGADOR PUEDE HABER TERMINADO ANTES DEL PLAZO O DESPUÉS, SI LA INVESTIGACIÓN SE PROLONGA, SOLICITA UNA AMPLIACIÓN.</li>
+            </ul>
+        `;
+    } else if (tipo === 'sesion') {
+        tituloPopover = '¿QUÉ ES LA FECHA DE PRESENTACIÓN DE PROYECTO?';
+        cuerpoHTML = `
+            <ul>
+                <li>ES LA FECHA EN QUE EL INVESTIGADOR PRESENTA SU PROYECTO AL COMITÉ DE INVESTIGACIÓN DE LA DIRIS LIMA CENTRO.</li>
+            </ul>
+        `;
+    }
+
+    // Incluir el botón 'Cerrar'
+    popover.innerHTML = `
+        <button class="close-popover" onclick="cerrarExplicacionGlobal(event)">Cerrar</button>
+        <h4>${tituloPopover}</h4>
+        ${cuerpoHTML}
+    `;
+
+    // Insertar el popover DENTRO del contenedor del modal.
+    contenidoModal.appendChild(popover);
+
+    // Obtener la posición del botón para posicionar el popover
+    const rectBoton = btn.getBoundingClientRect();
+    const rectContenido = contenidoModal.getBoundingClientRect();
+
+    // *** MODIFICACIÓN CLAVE: POSICIONAMIENTO VERTICAL (Solo 30px de ajuste) ***
+    let topPosition = rectBoton.top - rectContenido.top;
+    
+    // Reducción del ajuste a 30px (ajusta este valor si es necesario, 30px o menos)
+    const topAdjustment = 30; 
+    topPosition = topPosition - topAdjustment;
+
+    // Cálculo de posición Left 
+    const leftPosition = rectBoton.right - rectContenido.left;
+
+    // POSICIONAMIENTO HORIZONTAL (Moverlo más a la derecha)
+    const leftSeparation = 60; 
+
+    // Aplicar la posición relativa.
+    popover.style.top = `${topPosition}px`;
+    popover.style.left = `${leftPosition + leftSeparation}px`; 
+    popover.style.zIndex = 10; 
+
+    // Agregar un evento para cerrarlo al hacer clic en cualquier lugar del documento
+    document.addEventListener('click', cerrarExplicacionGlobal);
+    
+    // Evitar que el clic en el popover cierre el popover inmediatamente
+    popover.addEventListener('click', (e) => e.stopPropagation());
+}
+
+// Función global para cerrar el popover de explicación (sin cambios)
+function cerrarExplicacionGlobal(event) {
+    if (event) event.stopPropagation();
+    
+    const popover = document.getElementById("popoverExplicacion");
+    if (popover) {
+        popover.remove();
+        document.removeEventListener('click', cerrarExplicacionGlobal); 
+    }
 }
 
 function ocultarDetalles() {

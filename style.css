@@ -709,4 +709,102 @@ iframe {
     margin: 0 10px;
 }
 
+/*
+ * --------------------------------
+ * 1. Estilo para el botón de Explicación (Texto visible)
+ * --------------------------------
+ */
+.info-btn {
+    /* Reinicio y base */
+    background: none;
+    border: none;
+    cursor: pointer;
+    
+    /* Estilo de botón de acción claro */
+    font-size: 0.8em;
+    font-weight: 600; 
+    color: #1a73e8; 
+    background-color: transparent;
+    border: 1px solid #1a73e8;
+    border-radius: 4px;
+    padding: 3px 8px; 
+    margin-left: 10px !important;
+    white-space: nowrap; 
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
 
+.info-btn:hover {
+    background-color: #e6eefc; 
+    color: #1a73e8;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------------------------------------------- */
+/* 2. ESTILO PRINCIPAL DEL POPOVER (AGREGADO Y NECESARIO) */
+/* ---------------------------------------------------- */
+
+
+/* Encabezado: LÍNEA AZUL */
+.explicacion-popover h4 {
+    color: #007bff; 
+    font-size: 1.1em;
+    margin-top: 0; 
+    margin-bottom: 10px;
+    /* Espacio para el botón de Cerrar */
+    padding-right: 70px; 
+    padding-bottom: 5px;
+    /* *** MODIFICACIÓN CLAVE: Borde azul grueso *** */
+    border-bottom: 3px solid #007bff; 
+}
+
+/* Lista de Puntos */
+.explicacion-popover ul {
+    list-style-type: '• '; 
+    padding-left: 15px;
+    margin: 5px 0 0 0;
+    line-height: 1.4;
+}
+
+.explicacion-popover li {
+    margin-bottom: 5px;
+}
+
+
+/* ---------------------------------------------------- */
+/* 3. Estilo para el botón de Cerrar */
+/* ---------------------------------------------------- */
+
+
+/* ---------------------------------------------------- */
+/* 3. Estilo para el botón de Cerrar (Diseño Mejorado) */
+/* ---------------------------------------------------- */
+.close-popover {
+
+    
+    /* Diseño: Estilo de botón de acción */
+    background-color: #f8f9fa; /* Fondo muy claro */
+    border: 1px solid #dc3545; /* Borde rojo para la acción de "Cerrar" */
+    color: #dc3545; /* Texto rojo */
+    
+    /* Tipografía */
+    font-size: 0.75em; /* Ligeramente más grande */
+    font-weight: 700; /* Negrita */
+    text-transform: uppercase;
+    cursor: pointer;
+    
+    /* Forma y Espaciado */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    padding: 3px 8px; /* Más padding para que se vea como un botón */
+    line-height: 1; 
+    white-space: nowrap; 
+    
+    /* Transición de efecto hover */
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
+
+.close-popover:hover {
+    background-color: #dc3545; /* Invierte los colores al pasar el ratón */
+    color: #ffffff; /* Texto blanco */
+    border-color: #dc3545;
+}
