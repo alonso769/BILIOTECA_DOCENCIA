@@ -505,13 +505,13 @@ function inicializarRepo() {
     }
 
     // --- Otros Listeners de Inicialización (Carrusel, Menú, etc.) ---
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-        });
-    }
+    // const menuToggle = document.querySelector('.menu-toggle');
+    // const navMenu = document.querySelector('.nav-menu');
+    // if (menuToggle && navMenu) {
+    //     menuToggle.addEventListener('click', function() {
+    //         navMenu.classList.toggle('active');
+    //     });
+    // }
 
     // Inicializar carrusel (asumiendo que 'showSlides' y 'slideIndex' están definidos)
     if (typeof showSlides === 'function') {
