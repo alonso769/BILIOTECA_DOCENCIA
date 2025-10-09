@@ -376,16 +376,17 @@
 
 <script>
     function verPDF(ruta) {
-        // *** DETECCIÓN DE DISPOSITIVO MÓVIL (Ancho de pantalla <= 768px) ***
+        // Lógica simple para detectar si es un dispositivo móvil
+        // (ancho de pantalla menor o igual a 768px se considera móvil/tablet pequeño)
         if (window.innerWidth <= 768) {
-            // Caso 1: MÓVIL 📱 (Abre en una nueva pestaña para forzar el visor nativo/descarga)
+            // Caso 1: MÓVIL (Abre en nueva pestaña para descarga/visor nativo)
             window.open(ruta, '_blank');
         } else {
-            // Caso 2: ESCRITORIO/WEB 💻 (Usa el modal con el iframe)
+            // Caso 2: ESCRITORIO (Abre dentro del modal con iframe, como deseas)
             const visor = document.getElementById("visor");
             const pdfViewer = document.getElementById("pdfViewer");
             
-            // CORRECCIÓN: Forzar el reinicio del visor a la página 1
+            // Forzar el reinicio del visor a la página 1
             pdfViewer.src = ""; 
             
             // Asignar la nueva ruta y mostrar el modal
