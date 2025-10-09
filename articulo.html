@@ -363,7 +363,7 @@
 
     <!-- Pie de página -->
     <footer class="footer">
-        <p>&copy; 2025 Biblioteca de Artículos Científicos. Todos los derechos reservados.</p>
+        <p>&copy;2025 Elaborado por Alonso Sixto Silva Vidal.</p>
     </footer>
 
     <!-- Modal para visualizar PDF -->
@@ -374,21 +374,36 @@
         </div>
     </div>
 
-    <!-- Script para manejar la visualización de PDFs -->
-    <script>
-        function verPDF(ruta) {
+<script>
+    function verPDF(ruta) {
+        // *** DETECCIÓN DE DISPOSITIVO MÓVIL (Ancho de pantalla <= 768px) ***
+        if (window.innerWidth <= 768) {
+            // Caso 1: MÓVIL 📱 (Abre en una nueva pestaña para forzar el visor nativo/descarga)
+            window.open(ruta, '_blank');
+        } else {
+            // Caso 2: ESCRITORIO/WEB 💻 (Usa el modal con el iframe)
             const visor = document.getElementById("visor");
             const pdfViewer = document.getElementById("pdfViewer");
+            
+            // CORRECCIÓN: Forzar el reinicio del visor a la página 1
+            pdfViewer.src = ""; 
+            
+            // Asignar la nueva ruta y mostrar el modal
             pdfViewer.src = ruta;
             visor.style.display = "flex";
         }
+    }
 
-        function ocultarPDF() {
-            const visor = document.getElementById("visor");
-            const pdfViewer = document.getElementById("pdfViewer");
-            visor.style.display = "none";
-            pdfViewer.src = "";
-        }
-    </script>
+    function ocultarPDF() {
+        const visor = document.getElementById("visor");
+        const pdfViewer = document.getElementById("pdfViewer");
+        
+        // Ocultar el modal
+        visor.style.display = "none";
+        
+        // Limpiar el src para liberar memoria
+        pdfViewer.src = "";
+    }
+</script>
 </body>
 </html>

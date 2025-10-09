@@ -221,33 +221,52 @@
             <iframe id="pdfViewer" src="" frameborder="0"></iframe>
         </div>
     </div>
-    <script>
-        function verGuiaProyecto() { abrirPDF('PDF/guia_elaboracion_proyecto.pdf'); }
-        function verPrioridadesNacionales() { abrirPDF('PDF/prioridades_nacionales_investigacion.pdf'); }
-        function verBoton1() { abrirPDF('PDF/boton1.pdf'); }
-        function verBoton2() { abrirPDF('PDF/boton2.pdf'); }
-        function verBoton3() { abrirPDF('PDF/boton3.pdf'); }
-        function verBoton4() { abrirPDF('PDF/boton4.pdf'); }
-        function verBoton5() { abrirPDF('PDF/boton5.pdf'); }
-        function verBoton6() { abrirPDF('PDF/boton6.pdf'); }
-        function verBoton7() { abrirPDF('PDF/boton7.pdf'); }
-        function verBoton8() { abrirPDF('PDF/boton8.pdf'); }
-        function verBoton9() { abrirPDF('PDF/boton9.pdf'); }
-        function verBoton10() { abrirPDF('PDF/boton10.pdf'); }
+ <script>
+    // Mantener las funciones de los botones sin cambios, ya que llaman a abrirPDF
+    function verGuiaProyecto() { abrirPDF('PDF/guia_elaboracion_proyecto.pdf'); }
+    function verPrioridadesNacionales() { abrirPDF('PDF/prioridades_nacionales_investigacion.pdf'); }
+    function verBoton1() { abrirPDF('PDF/boton1.pdf'); }
+    function verBoton2() { abrirPDF('PDF/boton2.pdf'); }
+    function verBoton3() { abrirPDF('PDF/boton3.pdf'); }
+    function verBoton4() { abrirPDF('PDF/boton4.pdf'); }
+    function verBoton5() { abrirPDF('PDF/boton5.pdf'); }
+    function verBoton6() { abrirPDF('PDF/boton6.pdf'); }
+    function verBoton7() { abrirPDF('PDF/boton7.pdf'); }
+    function verBoton8() { abrirPDF('PDF/boton8.pdf'); }
+    function verBoton9() { abrirPDF('PDF/boton9.pdf'); }
+    function verBoton10() { abrirPDF('PDF/boton10.pdf'); }
 
-        function abrirPDF(ruta) {
+    // *** FUNCIÓN MODIFICADA CON DETECCIÓN DE DISPOSITIVO ***
+    function abrirPDF(ruta) {
+        // Lógica simple para detectar si es un dispositivo móvil
+        // (ancho de pantalla menor o igual a 768px se considera móvil/tablet pequeño)
+        if (window.innerWidth <= 768) {
+            // Caso 1: MÓVIL (Abre en nueva pestaña para descarga/visor nativo)
+            window.open(ruta, '_blank');
+        } else {
+            // Caso 2: ESCRITORIO (Abre dentro del modal con iframe, como deseas)
             const visor = document.getElementById("visor");
             const pdfViewer = document.getElementById("pdfViewer");
+            
+            // Forzar el reinicio del visor a la página 1
+            pdfViewer.src = ""; 
+            
+            // Asignar la nueva ruta y mostrar el modal
             pdfViewer.src = ruta;
             visor.style.display = "flex";
         }
+    }
 
-        function ocultarPDF() {
-            const visor = document.getElementById("visor");
-            const pdfViewer = document.getElementById("pdfViewer");
-            visor.style.display = "none";
-            pdfViewer.src = "";
-        }
-    </script>
+    function ocultarPDF() {
+        const visor = document.getElementById("visor");
+        const pdfViewer = document.getElementById("pdfViewer");
+        
+        // Ocultar el modal
+        visor.style.display = "none";
+        
+        // Limpiar el src para liberar memoria
+        pdfViewer.src = "";
+    }
+</script>
 </body>
 </html>

@@ -265,3 +265,36 @@ nav ul li a.active {
         height: 30px;
     }
 }
+
+
+/* ------------------------------------- */
+/* Estilo para el texto de orientación IMPORTANTE */
+/* ------------------------------------- */
+.alerta-soporte {
+    /* Color de texto que destaque la advertencia (rojo oscuro) */
+    color: #c0392b; 
+    
+    /* Fondo muy sutil para resaltarlo un poco más */
+    background-color: #fcecec; 
+    
+    /* Borde a la izquierda para un look tipo "banner" de alerta */
+    border-left: 5px solid #e74c3c;
+    
+    /* Espaciado interno */
+    padding: 8px 15px; 
+    
+    /* Convertir a bloque para que el padding y el borde funcionen bien */
+    display: block; 
+    
+    /* Margen para separarlo del texto superior */
+    margin-top: 15px; 
+    
+    /* Tamaño de fuente ligeramente más pequeño para contraste con el correo */
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+/* Asegura que la palabra "Importante" se vea bien en negrita dentro del span */
+.alerta-soporte strong {
+    font-weight: 700;
+}

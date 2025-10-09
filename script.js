@@ -49,6 +49,8 @@ function mostrarCargaTemporal() {
 
 // Función para mostrar el PDF de forma segura
 function verPDF(ruta) {
+        currentPage = 1; 
+
     const visor = document.getElementById("visor");
     const pdfViewerContainer = document.getElementById("pdfViewerContainer");
     const canvas = document.getElementById("pdfCanvas");
