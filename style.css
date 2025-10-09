@@ -808,3 +808,76 @@ iframe {
     color: #ffffff; /* Texto blanco */
     border-color: #dc3545;
 }
+
+
+/* =========================================== */
+/* AJUSTE DEL CONTENEDOR DE FILTROS GENERAL */
+/* =========================================== */
+.filter-box {
+    display: flex;
+    /* *** CAMBIO CLAVE: Centra todos los elementos horizontalmente *** */
+    justify-content: center; 
+    
+    align-items: center; /* Centra verticalmente todos los elementos de la fila */
+    flex-wrap: wrap; 
+    gap: 15px; /* Espacio entre los elementos */
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    background-color: #f7f7f7; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* IMPORTANTE: Mantenemos el margen para separar el contador de los botones */
+.filter-box button#btnLimpiar {
+    /* Agrega un margen extra para que el contador no esté pegado al botón */
+    margin-right: 15px; 
+}
+
+
+/* =========================================== */
+/* ESTILOS DEL CUADRO DEL CONTADOR (.contador-card) */
+/* =========================================== */
+.contador-card {
+    /* Mantenemos la estructura interna igual (display: flex, align-items: center) */
+    
+    /* Apariencia del cuadro */
+    background-color: #0b3558; /* Azul oscuro */
+    color: white;
+    padding: 10px 18px; 
+    border-radius: 10px; 
+    
+    /* Estructura */
+    display: flex;
+    
+    /* Centrado vertical */
+    align-items: center; 
+    
+    gap: 6px; 
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25); 
+    transition: all 0.3s ease;
+}
+
+/* El resto de estilos del contador (numero, texto, total) se mantienen igual */
+
+.contador-numero {
+    font-size: 2.2rem; 
+    font-weight: 900; 
+    color: #ffc107; 
+    line-height: 1; 
+}
+
+.contador-texto {
+    font-size: 1.1rem;
+    font-weight: 600; 
+    white-space: nowrap;
+    text-transform: uppercase; 
+}
+
+.contador-total {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    white-space: nowrap;
+    align-self: center; 
+    text-align: right; 
+}

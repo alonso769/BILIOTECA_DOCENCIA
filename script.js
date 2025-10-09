@@ -465,3 +465,149 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// ===========================================
+// LÓGICA DEL CONTADOR DINÁMICO
+// ===========================================
+
+// Variable global para almacenar todas las tarjetas de proyecto
+let allCards = []; 
+
+/**
+ * 1. Inicializa el contador, el total de tarjetas y asigna listeners.
+ */
+function inicializarRepo() {
+    // 1. Obtener todas las tarjetas de proyecto (se asume clase .pdf-card)
+    // Se recomienda ejecutar esta parte DENTRO de DOMContentLoaded para asegurar que las tarjetas existan.
+    allCards = document.querySelectorAll('.pdf-card');
+    const totalCount = allCards.length;
+
+    // 2. Inicializar el contador total y actual en el HTML
+    const contadorTotalElement = document.getElementById('contadorTotal');
+    const contadorActualElement = document.getElementById('contadorActual');
+
+    if (contadorTotalElement && contadorActualElement) {
+        contadorTotalElement.textContent = totalCount;
+        contadorActualElement.textContent = totalCount;
+    } else {
+        // En caso de que el HTML del contador no esté cargado o tenga IDs incorrectos
+        console.error("El HTML del contador (contadorTotal/contadorActual) no fue encontrado. Verifique IDs.");
+    }
+
+    // 3. Asignar los listeners a los botones de filtrado y limpieza
+    const btnFiltrar = document.getElementById("btnFiltrar");
+    const btnLimpiar = document.getElementById("btnLimpiar");
+    
+    if (btnFiltrar) {
+        btnFiltrar.addEventListener("click", filtrar);
+    }
+    if (btnLimpiar) {
+        btnLimpiar.addEventListener("click", limpiarFiltros);
+    }
+
+    // --- Otros Listeners de Inicialización (Carrusel, Menú, etc.) ---
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+    }
+
+    // Inicializar carrusel (asumiendo que 'showSlides' y 'slideIndex' están definidos)
+    if (typeof showSlides === 'function') {
+        showSlides(slideIndex);
+    }
+}
+
+
+/**
+ * 2. Aplica los filtros y actualiza el contador.
+ */
+function filtrar() {
+    // Si tienes una función de carga, úsala.
+    if (typeof mostrarCargaTemporal === 'function') mostrarCargaTemporal(); 
+    
+    // Pequeño delay para asegurar que la animación de carga se inicie antes de la lógica pesada.
+    setTimeout(() => {
+        // Obtener valores y normalizar texto
+        const searchName = document.getElementById("searchName");
+        const searchTitulo = document.getElementById("searchTitulo");
+        const searchEntidad = document.getElementById("searchEntidad");
+        const searchInformeFinal = document.getElementById("searchInformeFinal");
+
+        const nombreInvestigador = normalizarTexto(searchName.value).toLowerCase();
+        const tituloProyecto = normalizarTexto(searchTitulo.value).toLowerCase();
+        const entidad = searchEntidad.value;
+        const informeFinal = searchInformeFinal ? searchInformeFinal.value : '';
+
+        let proyectosVisiblesCount = 0; // Contador de resultados visibles
+
+        allCards.forEach(card => {
+            // Obtener data-atributos de la tarjeta
+            const nombreCard = normalizarTexto(card.dataset.investigador).toLowerCase();
+            const tituloCard = normalizarTexto(card.dataset.titulo).toLowerCase();
+            const entidadCard = card.dataset.entidad; // <--- USANDO TU DATA-ENTIDAD
+            const tieneInforme = card.dataset.tieneInforme;
+
+            // Lógica de coincidencia
+            const coincideNombre = nombreInvestigador === '' || nombreCard.includes(nombreInvestigador);
+            const coincideTitulo = tituloProyecto === '' || tituloCard.includes(tituloProyecto);
+            const coincideEntidad = entidad === '' || entidadCard === entidad;
+            const coincideInforme = informeFinal === '' || tieneInforme === informeFinal;
+
+            // Mostrar u ocultar la tarjeta
+            if (coincideNombre && coincideTitulo && coincideEntidad && coincideInforme) {
+                card.style.display = "block";
+                proyectosVisiblesCount++; 
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        // 3. Actualizar el contador de resultados visibles en el HTML
+        const contadorActualElement = document.getElementById('contadorActual');
+        if (contadorActualElement) {
+            contadorActualElement.textContent = proyectosVisiblesCount;
+        }
+        
+    }, 50);
+}
+
+
+/**
+ * 3. Limpia los filtros y resetea el contador al total.
+ */
+function limpiarFiltros() {
+    if (typeof mostrarCargaTemporal === 'function') mostrarCargaTemporal(); 
+
+    setTimeout(() => {
+        // 1. Resetear todos los inputs y selects
+        document.getElementById("searchName").value = '';
+        document.getElementById("searchTitulo").value = '';
+        document.getElementById("searchEntidad").value = '';
+        const searchInformeFinal = document.getElementById("searchInformeFinal");
+        if (searchInformeFinal) {
+            searchInformeFinal.value = '';
+        }
+
+        // 2. Mostrar todas las tarjetas
+        allCards.forEach(card => {
+            card.style.display = "block";
+        });
+        
+        // 3. Actualizar el contador al total
+        const contadorActualElement = document.getElementById('contadorActual');
+        if (contadorActualElement) {
+            contadorActualElement.textContent = allCards.length;
+        }
+
+    }, 50);
+}
+
+
+// ===========================================
+// LISTENERS DE INICIO
+// ===========================================
+
+// Ejecutar la función de inicialización cuando el DOM esté completamente cargado.
+document.addEventListener('DOMContentLoaded', inicializarRepo);
