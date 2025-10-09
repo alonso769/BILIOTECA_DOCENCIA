@@ -39,7 +39,7 @@ function mostrarCargaTemporal() {
     // Oculta la capa de carga después de 4 segundos
     setTimeout(() => {
         overlay.style.display = 'none';
-    }, 4000); // 4000 milisegundos = 4 segundos
+    }, 2000); // 4000 milisegundos = 4 segundos
 }
 
 
